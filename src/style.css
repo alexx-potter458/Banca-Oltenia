@@ -1,0 +1,24 @@
+body
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#head
+{
+    background-color: cadetblue;
+    padding: 1em;
+    margin: -10px;
+}
+
+#theTitle
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    font-size:xx-large;
+}
+#motto
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    font-size:normal;
+}
