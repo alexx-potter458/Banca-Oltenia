@@ -1,0 +1,90 @@
+body {
+    font-family:Arial, Helvetica, sans-serif
+}
+
+#title {
+    display: block;
+    text-align: center;
+}
+
+#title > img {
+    width: 15%;
+    
+}
+
+nav {
+    display: block;
+    box-shadow: 0px 15px 15px 0 rgba(0, 0, 0, 0.5);
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#menu {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+    z-index: 5;
+}
+
+a {
+    display: block;
+    padding:  1em;
+    text-decoration: none;
+    color: rgba(230, 230, 240, 1);
+
+}
+
+#menu > li > a:hover {
+    background-color: rgba(2, 36, 80, 1); 
+}
+
+#submenuacasa {
+    visibility: hidden;
+    display: block;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin-top: 2px;
+    z-index: 2;
+    box-shadow: 0px 15px 15px 0 rgba(0, 0, 0, 0.5);
+    
+}
+
+#submenuacasa > li > a:hover {
+    background-color: rgba(2, 36, 80, 1);
+}
+ 
+
+#submenuprod {
+    position: absolute;
+    box-shadow: 0px 15px 15px 0 rgba(0, 0, 0, 0.5);
+    list-style: none;
+    padding: 0;
+    left: 7em;
+    top: -0.01em;
+    width: 250px;
+    visibility: hidden;
+    
+}
+
+#submenuprod > li > a:hover {
+    background-color: rgba(2, 36, 80, 1);
+}
+
+#menu .left:hover #submenuacasa{
+    visibility: visible;
+}
+
+#submenuacasa .submenuprod:hover #submenuprod {
+    visibility: visible;
+}
+
+h2 {
+    padding: 0.5em;
+    box-shadow: 0px 15px 15px 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 2em;
+    margin-top: 1em;
+
+}

@@ -1,5 +1,5 @@
-<!DOCTYPE html> 
-<html lang="ro"> 
+<!DOCTYPE html> <!--am adaugat doctype-->
+<html lang="ro"> <!--am setat limba paginii-->
 
   <head>
     <meta charset="utf-8">
@@ -7,114 +7,137 @@
     <meta name="description" content="Acesta este site-ul Bancii Oltenia unde vor fi prrezentate produsele acesteia.">
     <meta name="keywords" content="banca, bani, cont, Oltenia, transfer, card, serviciu, feedback, oferta, client, valuta, bancar, familie, student">
     <meta name="viewport" content="width=device-width">
+    <!--am folsit cele 4 meta-uri-->
 
     <title>Banca Oltenia</title>
     <link rel="title icon" type="image/x-icon" href="./src/icons/title_ico_fav.ico"/>
+    <!--am setat titlul si iconita din tab-->
+
+    <link href="./src/layout.css" rel="stylesheet" type="text/css">
+    <link href="./src/color_schema.css" rel="stylesheet" type="text/css">
+    
+
   </head>
 
-  <body>
+  <body class="creativity-1 creativity-5">
+    <!--am impartit body-ul in header, main si footer-->
       
     <header id="inceput">
-      <h1> Banca Oltenia </h1>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Acasa</a></li>
-          <li><div>Produse</div>
-              <ul>
-                <li><a href="#produse">toate produsele</a></li>
-                <li><a href="#student">pentru studenti</a></li>
-                <li><a href="firma" >pentru firme</a></li>
-              </ul>
+      <div id="title">
+        <img src="./src/icons/title_ico_512x512.png">
+        <h1> Banca Oltenia </h1>
+      </div>
+      <nav class="creativity-5 creativity-4">
+        <!--am realizat meniul de navigare in pagina-->
+        <ul id="menu">
+          <li class="left">
+            <a href="./index.html">Acasa</a>
+            <ul id="submenuacasa" class="creativity-4">
+              <li class="submenuprod">
+                <a  href="#produse"> Produse</a>
+                <ul id="submenuprod" class="creativity-4">
+                  <li><a href="#angajat">Pachet special pentru angajati</a></li>
+                  <li><a href="#student">Pachet special pentru studenti</a></li>
+                  <li><a href="#firma" >Pachet special pentru firme</a></li>
+                </ul>
+              </li>
 
+              <li><a href="#detalii">Despre noi</a></li>
+            </ul>
           </li>
-          <li><a href="./src/empty.html" target="_blank">Contul meu</a></li>
-          <li><a href="#detalii">Despre noi</a></li>
+          <li class="right"><a href="./src/empty.html">Contul meu</a></li>
+          <li class="right"><a href="./src/empty.html" target="_blank">Asociatia <q>Imparte bucurii</q></a></li><!--link extern-->
         </ul>
+
       </nav>
     </header>
 
     <main>
-      <section>
-        <h2 id="produse">Produse:</h2>
-      
-        <br> 
-                <div>Pachet servicii angajati:<s> 50lei </s> <strong>0lei</strong></div> 
-                <ul>
-                 <li>cont bancar</li>
-                 <li>card credit </li> 
-                 <li><i>IBAN</i> unic pentru mai multe monede</li>
-                 <li><b>0% comision</b> la extragerea din orice bancomat</li>
-                </ul>
-       
-
-        <h3 id="student">pentru studenti:</h3>
+      <section><!--am folosit tag-urile section, p, ol, ul si aside-->
         
-        <p>Un video reprezentativ mai jos:</p>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/xvXbARLoRSU"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
-        <div>Pachet servicii studenti:<s> 10lei </s> <strong>0lei</strong></div> 
-        <ul>
-         <li>cont bancar</li>
-         <li>bonus lunar de 10lei </li> 
-         <li>card transparent</li>
-         <li><b>asigurare de sanatate pe baza cardului</b></li>
-        </ul><br>
-
-        <details>
-          <summary>Cum poti face asta?</summary>
-          <ol>
-            <li>Mergi la cel mai apropiat sediu al bancii noastre</li>
-            <li>Ne spui despre planul pe care il vrei</li>
-            <li>De restul ne ocupam noi</li>
-          </ol>
-        </details>
-
-        <h3 id="firma">pentru firme:</h3>
-
-        <p>Un video reprezentativ mai jos:</p>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/bxXuFl0fkTc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div> poze </div>
        
-        <p> 
-          <div>Pachet servicii firme:<s> 300lei </s> <strong>40lei</strong></div> 
-          <ul>
-           <li>cont bancar</li>
-           <li>card credit </li> 
-           <li>schimb valutar fara comision</li>
-           <li><b>0% comision</b> la primele 10 extrageri</li>
-          </ul><br>
+        <h2 id="produse" class="creativity-3 creativity-4">Produse</h2>
 
-          <details>
-            <summary>Cum poti face asta?</summary>
-            <ol>
-              <li>Mergi la cel mai apropiat sediu al bancii noastre</li>
-              <li>Ne spui despre planul pe care il vrei</li>
-              <li>De restul ne ocupam noi</li>
-            </ol>
-          </details>
-
-
+          <div class="accent_color" id="angajat">
+            <div>Pachet servicii angajati:<s> 50lei </s> <strong>0lei</strong></div> 
+            <ul>
+              <li>cont bancar</li>
+              <li>card credit </li> 
+              <li><i>IBAN</i> unic pentru mai multe monede</li>
+              <li><b>0% comision</b> la extragerea din orice bancomat</li>
+            </ul>
+          </div>
+          
+          <div id="student">
+            <!--am folosit  tagurile i, s, strong-->
+            
+            Pachet servicii studenti:<s> 10lei </s> <strong>0lei</strong>
+            <ul>
+              <li>cont bancar</li>
+              <li>bonus lunar de 10lei </li> 
+              <li>card transparent</li>
+              <li><b>asigurare de sanatate pe baza cardului</b></li>
+            </ul>
+            
+            <p>Un video reprezentativ mai jos:</p>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/xvXbARLoRSU"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <details>
+              <summary>Cum poti face asta?</summary>
+              <ol>
+                <li>Mergi la cel mai apropiat sediu al bancii noastre</li>
+                <li>Ne spui despre planul pe care il vrei</li>
+                <li>De restul ne ocupam noi</li>
+              </ol>
+            </details>
+          </div>
+        
+          <div id="firma">
+            Pachet servicii firme:<s> 300lei </s> <strong>40lei</strong>
+            <ul>
+              <li>cont bancar</li>
+              <li>card credit </li> 
+              <li>schimb valutar fara comision</li>
+              <li><b>0% comision</b> la primele 10 extrageri</li>
+            </ul>
+            
+            <p>Un video reprezentativ mai jos:</p>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/bxXuFl0fkTc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <details>
+              <summary>Cum poti face asta?</summary>
+              <ol>
+                <li>Mergi la cel mai apropiat sediu al bancii noastre</li>
+                <li>Ne spui despre planul pe care il vrei</li>
+                <li>De restul ne ocupam noi</li>
+              </ol>
+            </details>
+                    
+          </div> 
+          
       </section>
 
-      <section id="detalii"><h2>Despre noi</h2>
+      <section  id="detalii"><h2 class="creativity-3 creativity-4">Despre noi</h2>
         <p>
           De obicei, site-urile băncilor sunt foarte aglomerate și greu de navigat prin acestea,<br> 
           astfel fiind dificil pentru multe persoane să găsească informația de care au nevoie.<br> 
           Din acest motiv proiectul ”Banca Oltenia” are ca scop prezentarea unei soluții ideale pentru această problemă.<br> 
           Site-ul va fi unul ușor de utilizat pentru orice persoană.<br>
         </p>
+
         <aside>
           <p>
             La banca noasta veti beneficia de anumite servicii bonus daca sunteti din Craiova.
           </p>
         </aside>
 
-      
       </section>
     </main>
 
     <footer>
       <p>
-        <a href="#inceput">Inapoi la inceput</a>
+        <a href="#inceput">Inapoi la inceput</a><!--link catre inceput-->
       </p>
 
       <address>
@@ -122,7 +145,6 @@
         <p>Email: support@bancaolt.com</p>
         <p>Adresa: Craiova</p>
       </address>
-
 
      <small>&copy; Copyright <time datetime="2021-03-04">Martie 2021</time> Banca Oltenia</small>
 
