@@ -2,6 +2,8 @@ body {
     font-family:Arial, Helvetica, sans-serif
 }
 
+
+
 #title {
     display: block;
     text-align: center;
@@ -32,7 +34,7 @@ a {
     display: block;
     padding:  1em;
     text-decoration: none;
-    color: rgba(230, 230, 240, 1);
+    color: rgba(250, 250, 250, 1);
 
 }
 
@@ -81,10 +83,111 @@ a {
     visibility: visible;
 }
 
-h2 {
+h3 {
     padding: 0.5em;
     box-shadow: 0px 15px 15px 0 rgba(0, 0, 0, 0.5);
     margin-bottom: 2em;
     margin-top: 1em;
 
+}
+
+.poze {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 1em;
+    
+}
+.poze > img {
+    width: 30%;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.zonele-2-3-4 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 1em;
+    margin: 2em;
+}
+.zonele-3-4 {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.zonele-2-3-4 h3 {
+    text-align: center;
+}
+
+.valutar {
+    margin: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+}
+.valutar td, th {
+    padding: 1em;
+    border: 1px solid rgba(2, 36, 80, 1);
+}
+
+.valutar th {
+    background-color: rgba(2, 36, 80, 1);
+}
+
+
+.calendar {
+    margin: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+}
+.calendar td, th {
+    padding: 1em;
+    border: 1px solid rgba(2, 36, 80, 1);
+}
+
+.listanunt {
+    padding: 0;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.listanunt li {
+    border: 1px solid rgba(2, 36, 80, 1);
+    padding: 0.5em;
+    list-style: none;
+}
+
+.zonele-5-6-7 {
+    display: grid;
+    grid-template-columns: 30% 38% 30%;
+    grid-gap: 1%;
+    text-align: center;
+}
+
+.zonele-5-6-7 h3 {
+    text-align: center;
+}
+
+.list {
+    width: fit-content;
+}
+
+.zona-5 li {
+    padding: 0.4em;
+    margin: 0.5em;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.datautil {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.datautil td {
+    padding: 1em;
+    border: 1px solid rgba(2, 36, 80, 1);
+    text-align: start;
+}
+.zona-7 p{
+    text-align: start;
+    margin: 1em;
 }
