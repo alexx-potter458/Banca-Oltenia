@@ -59,19 +59,6 @@ h3 {
     text-align: center;
 }
 
-.valutar {
-    margin: auto;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
-    border-collapse: collapse;
-}
-.valutar td, th {
-    padding: 1em;
-    border: 1px solid rgba(2, 36, 80, 1);
-}
-
-.valutar th {
-    background-color: rgba(2, 36, 80, 1);
-}
 
 
 .calendar {

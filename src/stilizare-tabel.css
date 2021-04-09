@@ -1,0 +1,21 @@
+.valutar {
+    margin: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+}
+.valutar td, th {
+    padding: 1em;
+    border: 1px solid rgba(2, 36, 80, 1);
+}
+
+.valutar th {
+    background-color: rgba(2, 36, 80, 1);
+}
+
+.valutar tr:nth-of-type(even) {
+ background-color: rgba(217, 202, 200, 1); ;   
+}
+
+.valutar tr:hover {
+    background-color: rgba(1, 21, 38, 1);
+}
