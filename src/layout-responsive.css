@@ -151,15 +151,3 @@ h3 {
 #detalii p {
     margin: 2em;
 }
-
-.btn {
-    width: fit-content;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
-}
-
-.btn:hover {
-    background-color: rgba(2, 36, 80, 1);
-}

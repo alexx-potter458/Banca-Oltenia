@@ -18,6 +18,10 @@
     <link href="./src/layout-responsive.css" rel="stylesheet" type="text/css">
     <link href="./src/schema_cromatica.css" rel="stylesheet" type="text/css">
     <link href="./src/variante-meniu.css" rel="stylesheet" type="text/css">
+    <link href="./src/stilizare-hr.css" rel="stylesheet" type="text/css">
+    <link href="./src/link-top.css" rel="stylesheet" type="text/css">
+    <link href="./src/stilizare-taburi.css" rel="stylesheet" type="text/css">
+    <link href="./src/animatie_banner.css" rel="stylesheet" type="text/css">
     
 
   </head>
@@ -37,7 +41,7 @@
             <a id="bars"><i class="fa fa-bars brs"></i></a>
             <ul id="menu">
                 <li class="left hide">
-                  <a href="./index.html"> <i id="icon" class="fa fa-home"></i> <e id="home">Acasa</e></a>
+                  <a id="frameLink" href="./index.html" target="frame"> <i id="icon" class="fa fa-home"></i> <e id="home">Acasa</e></a>
                   <ul id="submenuacasa" class="creativity-4">
                     <li><a href="#cursval">Curs valutar</a></li>
                     <li><a href="#calendar">Calendar</a></li>
@@ -63,7 +67,7 @@
                 
                 <li class="right hide">
                   <div class="navLine"></div>
-                  <a  href="./src/empty.html" target="_blank">Asociatia <q>Imparte bucurii</q></a>
+                  <a  href="./src/empty.html" target="frame">Asociatia <q>Imparte bucurii</q></a>
                 </li><!--link extern-->
             </ul>
           </li>
@@ -204,7 +208,7 @@
               </ul>
             
              <p>Un video reprezentativ mai jos:</p>
-              <iframe width="480" height="240" src="https://www.youtube.com/embed/xvXbARLoRSU"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe name="frame" width="480" height="240" src="https://www.youtube.com/embed/xvXbARLoRSU"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             
               <details>
                 <summary>Cum poti face asta?</summary>
@@ -254,7 +258,7 @@
 
         </div>
       </section>
-
+      <hr class="creativity-5">
       <section  id="detalii"><h3 class="creativity-5 creativity-4">Despre noi</h3>
         <p>
           De obicei, site-urile băncilor sunt foarte aglomerate și greu de navigat prin acestea,<br> 
@@ -270,12 +274,13 @@
         </aside>
 
       </section>
+      <hr class="creativity-5">
     </main>
 
     <footer>
-      <p>
-        <a class="creativity-4 btn" href="#inceput">Inapoi la inceput</a><!--link catre inceput-->
-      </p>
+      <div id="buton">
+        <a class="btn" href="#inceput"><i id="icon" class="fa fa-home"></i></a><!--link catre inceput-->
+      </div>
 
       <address>
         <p>Telefon: 0754544434</p>
@@ -286,6 +291,8 @@
      <small>&copy; Copyright <time datetime="2021-03-04">Martie 2021</time> Banca Oltenia</small>
 
     </footer>
+
+    <div id="banner">Acesta este un proiect scolar</div>
 
   </body>
 
