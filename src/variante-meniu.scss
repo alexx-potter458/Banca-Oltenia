@@ -1,76 +1,341 @@
 $background: rgba(2, 36, 80, 1);
 $shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.7);
-
-nav {
-    display: block;
-    box-shadow: $shadow;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    z-index: 5;
-}
-
-#menu {
-    display:flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    list-style: none;
-    padding: 0;
-    z-index: 5;
-}
+$menuTransition: opacity .5s, transform .5s;
+$textColor: rgba(250, 250, 250, 1);
 
 a {
     display: block;
     padding:  1.3em;
     text-decoration: none;
-    color: rgba(250, 250, 250, 1);
-    transition: background-color 1s;
+    color: $textColor;
+    transition: background-color 0.5s;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px){
+    nav {
+        display: block;
+        box-shadow: $shadow;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        z-index: 5;
+        #menu {
+            display:flex;
+            position: relative;
+            flex-direction: row;
+            justify-content: flex-start;
+            list-style: none;
+            padding: 0;
+            z-index: 5;
     
-
+            .right {
+                position: relative;
+                .navLine {
+                    display: block;
+                    position: absolute;
+                    width: 90%;
+                    margin-left: 5%;
+                    color: $textColor;
+                    height: 2px;
+                    background-color: $textColor;
+                    opacity: 0;
+                    transition: transform 1s, opacity 1s;
+                }
+            }
+    
+            .right:hover {
+                
+                .navLine {
+                    transform: translateY(3.2em);
+                    opacity: 1;
+                }
+            }
+    
+            a:hover {
+                background-color: $background; 
+    
+            }
+           
+            .left:hover {
+                #submenuacasa {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }   
+        }
+    }
+    
+    #submenuacasa {
+        visibility: hidden;
+        display: block;
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        margin-top: -5px;
+        z-index: 2;
+        box-shadow: $shadow;
+        opacity: 0;
+        transform: scale(0.5);
+        transition: $menuTransition;
+        
+    
+        li > a:hover {
+            background-color: $background;
+        }
+    
+        .submenuprod:hover {
+            #submenuprod {
+                visibility: visible;
+                opacity: 1;
+                transform: scale(1);
+            }
+        } 
+    }
+    
+    #submenuprod {
+        position: absolute;
+        box-shadow: $shadow;
+        list-style: none;
+        padding: 0;
+        left: 7em;
+        top: 18.6em;
+        width: 250px;
+        opacity: 0;
+        transform: scale(0.5);
+        visibility: hidden;
+        transition: $menuTransition;
+        
+        li > a:hover {
+            background-color: $background;
+        }
+    }
+    
+    #icon {
+        fill: $textColor;
+        visibility: visible;
+    }
+    
+    #bars{
+        position: absolute;
+        visibility: hidden;
+        padding: 1em;
+    }
+    #menu {
+        font-size: 90%;
+    }
+    #home {
+        visibility: hidden;
+        position: absolute;
+    }
+    #bigList {
+        display:flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: flex-start;
+            list-style: none;
+            padding: 0;
+    }
 }
 
-#menu > li > a:hover {
-    background-color: $background; 
-}
+@media screen and (min-width: 1000px){
 
-#submenuacasa {
-    visibility: hidden;
-    display: block;
-    position: absolute;
-    list-style: none;
-    padding: 0;
-    margin-top: -5px;
-    z-index: 2;
-    box-shadow: $shadow;
+    nav {
+        display: block;
+        box-shadow: $shadow;
+        margin-top: 2em;
+        margin-bottom: 2em;
     
     
-}
+        #menu {
+            display:flex;
+            position: relative;
+            flex-direction: row;
+            justify-content: flex-start;
+            list-style: none;
+            padding: 0;
 
-#submenuacasa > li > a:hover {
-    background-color: $background;
-}
- 
+            .right {
+                position: relative;
 
-#submenuprod {
-    position: absolute;
-    box-shadow: $shadow;
-    list-style: none;
-    padding: 0;
-    left: 7em;
-    top: 18.6em;
-    width: 250px;
-    visibility: hidden;
+                .navLine {
+                    display: block;
+                    position: absolute;
+                    width: 90%;
+                    margin-left: 5%;
+                    color: $textColor;
+                    height: 2px;
+                    background-color: $textColor;
+                    opacity: 0;
+                    transition: transform 1s, opacity 1s;
+                }
+            }
     
+            .right:hover {
+                .navLine {
+                    transform: translateY(3.2em);
+                    opacity: 1;
+                }
+            }
+    
+            a:hover {
+                background-color: $background; 
+            }
+           
+            .left:hover {
+                #submenuacasa {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }   
+        }
+    }
+    
+    #submenuacasa {
+        visibility: hidden;
+        display: block;
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        margin-top: -5px;
+        box-shadow: $shadow;
+        opacity: 0;
+        transform: scale(0.5);
+        transition: $menuTransition;
+        
+        li > a:hover {
+            background-color: $background;
+        }
+    
+        .submenuprod:hover {
+            #submenuprod {
+                visibility: visible;
+                opacity: 1;
+                transform: scale(1);
+            }
+        } 
+    }
+    
+    #submenuprod {
+        position: absolute;
+        box-shadow: $shadow;
+        list-style: none;
+        padding: 0;
+        left: 7em;
+        top: 18.6em;
+        width: 250px;
+        opacity: 0;
+        transform: scale(0.5);
+        visibility: hidden;
+        transition: $menuTransition;
+        
+        li > a:hover {
+            background-color: $background;
+        }
+    }
+    
+    #icon {
+        fill: $textColor;
+        visibility: visible;
+    }
+    
+    #bars{
+        position: absolute;
+        visibility: hidden;
+        padding: 1em;
+    }
+    #bigList {
+        display:flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: flex-start;
+            list-style: none;
+            padding: 0;
+    }
 }
 
-#submenuprod > li > a:hover {
-    background-color: $background;
-}
+@media screen and (max-width: 600px) {
+    nav {
+        display: block;
+        box-shadow: $shadow;
+        margin-top: 0em;
+        margin-bottom: 2em;
 
+        #bigList {
+            visibility: visible;
+            display:flex;
+            font-size: 90%;
+            position: relative;
+            flex-direction: column;
+            text-align: center;
+            list-style: none;
+            padding: 0;
 
-#menu .left:hover #submenuacasa{
-    visibility: visible;
-}
+            a:hover {
+                background-color: $background;
+            }
+    
+            .left:hover {
+                #submenuacasa {
+                    visibility: visible;
+                    position: relative;
+                } 
+            }
+            #home {
+                visibility: hidden;
+                position: absolute;
+            }
 
-#submenuacasa .submenuprod:hover #submenuprod {
-    visibility: visible;
+           
+        }
+
+    }
+    #submenuacasa {
+        visibility: hidden;
+        display: block;
+        position: absolute;
+        list-style: none;
+        padding: 0;
+    
+        li > a:hover {
+            background-color: $background;
+        }
+    
+        .submenuprod:hover {
+            #submenuprod {
+                visibility: visible;
+                position: relative;
+                opacity: 1;
+            }
+        } 
+    }
+    
+    #submenuprod {
+        position: absolute;
+        display: block;
+        list-style: none;
+        padding: 0;
+        visibility: hidden;
+        
+        li > a:hover {
+            background-color: $background;
+        }
+    }
+    #menu {
+        display:block;
+        font-size: 90%;
+        position: absolute;
+        visibility: hidden;
+        text-align: center;
+        list-style: none;
+        padding: 0;
+    }
+
+    #bigList:hover {
+        #menu {
+            visibility: visible;
+            position: relative;
+        }
+    }
+
 }
