@@ -1,341 +1,191 @@
+@import "./schema_cromatica.css";
+
 $background: rgba(2, 36, 80, 1);
-$shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.7);
+$shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.7);
 $menuTransition: opacity .5s, transform .5s;
 $textColor: rgba(250, 250, 250, 1);
 
-a {
+
+#menu {
+    z-index: 10;
     display: block;
-    padding:  1.3em;
-    text-decoration: none;
-    color: $textColor;
-    transition: background-color 0.5s;
-}
+    position: relative;
+    background-color: var(--culoare3);
+    list-style: none;
+    box-shadow: $shadow;
+    border-radius: 10px;
+    padding: 0;
 
-@media screen and (min-width: 600px) and (max-width: 1000px){
-    nav {
+    a {
         display: block;
-        box-shadow: $shadow;
-        margin-top: 2em;
-        margin-bottom: 2em;
-        z-index: 5;
-        #menu {
-            display:flex;
-            position: relative;
-            flex-direction: row;
-            justify-content: flex-start;
+        text-decoration: none;
+        padding: 1em;
+        width: auto;
+        color: var(--culoare5);
+        transition: background-color 0.5s, color .5s;
+    }
+
+    a:hover {
+        background-color: var(--culoare2);
+        color: var(--culoare3);
+        border-radius: 10px;
+    }
+
+    #bars {
+        
+        position: absolute;
+        visibility: hidden;
+    }
+
+    #barsMenu {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 0;
+       
+        #homeMenu {
             list-style: none;
             padding: 0;
-            z-index: 5;
-    
-            .right {
-                position: relative;
-                .navLine {
-                    display: block;
-                    position: absolute;
-                    width: 90%;
-                    margin-left: 5%;
-                    color: $textColor;
-                    height: 2px;
-                    background-color: $textColor;
-                    opacity: 0;
-                    transition: transform 1s, opacity 1s;
-                }
+            position: absolute;
+            visibility: hidden;
+            box-shadow: $shadow;
+            background-color: var(--culoare3);
+            border-radius: 10px;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: $menuTransition;
+            
+
+            #prodMenu {
+                list-style: none;
+                padding: 0;
+                position: absolute;
+                visibility: hidden;
+                box-shadow: $shadow;
+                background-color: var(--culoare3);
+                border-radius: 10px;
+                opacity: 0;
+                transform: scale(0.5);
+                transition: $menuTransition;
             }
-    
-            .right:hover {
-                
-                .navLine {
-                    transform: translateY(3.2em);
-                    opacity: 1;
-                }
-            }
-    
-            a:hover {
-                background-color: $background; 
-    
-            }
-           
-            .left:hover {
-                #submenuacasa {
+
+            #showProdMenu:hover {
+                #prodMenu {
                     visibility: visible;
                     opacity: 1;
                     transform: scale(1);
                 }
-            }   
+            }
         }
-    }
-    
-    #submenuacasa {
-        visibility: hidden;
-        display: block;
-        position: absolute;
-        list-style: none;
-        padding: 0;
-        margin-top: -5px;
-        z-index: 2;
-        box-shadow: $shadow;
-        opacity: 0;
-        transform: scale(0.5);
-        transition: $menuTransition;
-        
-    
-        li > a:hover {
-            background-color: $background;
-        }
-    
-        .submenuprod:hover {
-            #submenuprod {
+
+        .showHomeMenu:hover {
+
+            #homeMenu {
                 visibility: visible;
                 opacity: 1;
                 transform: scale(1);
             }
-        } 
-    }
-    
-    #submenuprod {
-        position: absolute;
-        box-shadow: $shadow;
-        list-style: none;
-        padding: 0;
-        left: 7em;
-        top: 18.6em;
-        width: 250px;
-        opacity: 0;
-        transform: scale(0.5);
-        visibility: hidden;
-        transition: $menuTransition;
-        
-        li > a:hover {
-            background-color: $background;
+
+        }
+
+        .specialTab {
+            position: relative;
+        }
+
+        .navLine {
+            display: block;
+            position: absolute;
+            margin-left: 5%;
+            width: 90%;
+            color: $textColor;
+            height: 2px;
+            background-color: $textColor;
+            opacity: 0;
+            transition: transform 1s, opacity 1s;
+        }
+
+        .specialTab:hover {
+            .navLine {
+                transform: translateY(2.5em);
+                opacity: 1;
+            }
         }
     }
-    
-    #icon {
-        fill: $textColor;
-        visibility: visible;
-    }
-    
-    #bars{
-        position: absolute;
-        visibility: hidden;
-        padding: 1em;
-    }
+
+}
+
+@media screen and (max-width: 1000px) {
+
     #menu {
-        font-size: 90%;
-    }
-    #home {
-        visibility: hidden;
-        position: absolute;
-    }
-    #bigList {
-        display:flex;
-            position: relative;
-            flex-direction: column;
-            justify-content: flex-start;
-            list-style: none;
-            padding: 0;
-    }
-}
 
-@media screen and (min-width: 1000px){
-
-    nav {
-        display: block;
-        box-shadow: $shadow;
-        margin-top: 2em;
-        margin-bottom: 2em;
-    
-    
-        #menu {
-            display:flex;
-            position: relative;
-            flex-direction: row;
-            justify-content: flex-start;
-            list-style: none;
-            padding: 0;
-
-            .right {
-                position: relative;
-
-                .navLine {
-                    display: block;
-                    position: absolute;
-                    width: 90%;
-                    margin-left: 5%;
-                    color: $textColor;
-                    height: 2px;
-                    background-color: $textColor;
-                    opacity: 0;
-                    transition: transform 1s, opacity 1s;
-                }
-            }
-    
-            .right:hover {
-                .navLine {
-                    transform: translateY(3.2em);
-                    opacity: 1;
-                }
-            }
-    
-            a:hover {
-                background-color: $background; 
-            }
-           
-            .left:hover {
-                #submenuacasa {
-                    visibility: visible;
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }   
+        a {
+            font-size: 90%;
         }
-    }
-    
-    #submenuacasa {
-        visibility: hidden;
-        display: block;
-        position: absolute;
-        list-style: none;
-        padding: 0;
-        margin-top: -5px;
-        box-shadow: $shadow;
-        opacity: 0;
-        transform: scale(0.5);
-        transition: $menuTransition;
-        
-        li > a:hover {
-            background-color: $background;
+
+        #home {
+            visibility: hidden;
+            position: absolute;
         }
-    
-        .submenuprod:hover {
-            #submenuprod {
-                visibility: visible;
-                opacity: 1;
-                transform: scale(1);
-            }
-        } 
-    }
-    
-    #submenuprod {
-        position: absolute;
-        box-shadow: $shadow;
-        list-style: none;
-        padding: 0;
-        left: 7em;
-        top: 18.6em;
-        width: 250px;
-        opacity: 0;
-        transform: scale(0.5);
-        visibility: hidden;
-        transition: $menuTransition;
-        
-        li > a:hover {
-            background-color: $background;
-        }
-    }
-    
-    #icon {
-        fill: $textColor;
-        visibility: visible;
-    }
-    
-    #bars{
-        position: absolute;
-        visibility: hidden;
-        padding: 1em;
-    }
-    #bigList {
-        display:flex;
-            position: relative;
-            flex-direction: column;
-            justify-content: flex-start;
-            list-style: none;
-            padding: 0;
+
     }
 }
 
 @media screen and (max-width: 600px) {
-    nav {
-        display: block;
-        box-shadow: $shadow;
-        margin-top: 0em;
-        margin-bottom: 2em;
 
-        #bigList {
-            visibility: visible;
-            display:flex;
-            font-size: 90%;
-            position: relative;
-            flex-direction: column;
-            text-align: center;
-            list-style: none;
-            padding: 0;
-
-            a:hover {
-                background-color: $background;
-            }
-    
-            .left:hover {
-                #submenuacasa {
-                    visibility: visible;
-                    position: relative;
-                } 
-            }
-            #home {
-                visibility: hidden;
-                position: absolute;
-            }
-
-           
-        }
-
-    }
-    #submenuacasa {
-        visibility: hidden;
-        display: block;
-        position: absolute;
-        list-style: none;
-        padding: 0;
-    
-        li > a:hover {
-            background-color: $background;
-        }
-    
-        .submenuprod:hover {
-            #submenuprod {
-                visibility: visible;
-                position: relative;
-                opacity: 1;
-            }
-        } 
-    }
-    
-    #submenuprod {
-        position: absolute;
-        display: block;
-        list-style: none;
-        padding: 0;
-        visibility: hidden;
-        
-        li > a:hover {
-            background-color: $background;
-        }
-    }
     #menu {
-        display:block;
-        font-size: 90%;
-        position: absolute;
-        visibility: hidden;
-        text-align: center;
-        list-style: none;
-        padding: 0;
-    }
-
-    #bigList:hover {
-        #menu {
-            visibility: visible;
+        #bars {
             position: relative;
+            visibility: visible;
+        }
+
+        a {
+            text-align: center;
+        }
+
+        #barsMenu {
+            flex-direction: column;
+            background-color: var(--culoare2);
+            visibility: hidden;
+            position: absolute;
+            clip-path: circle(0%);
+            transition: clip-path 2s, background-color 2s;
+            border-radius: 10px;
+
+            #homeMenu {
+                opacity: 1;
+                transform: scale(1);
+
+                #prodMenu {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                #showProdMenu:hover {
+                    #prodMenu {
+                        position: relative;
+                        visibility: visible;
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            .showHomeMenu:hover {
+                #homeMenu {
+                    position: relative;
+                    visibility: visible;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        #showBigMenu:hover {
+            #barsMenu {
+                position: relative;
+                visibility: visible;
+                clip-path: circle(100%);
+                background-color: var(--culoare3);
+            }
         }
     }
-
+    
 }

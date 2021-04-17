@@ -1,10 +1,7 @@
-body {
-    font-family:Arial, Helvetica, sans-serif
-}
-
-
+@import "schema-cromatica.css";
 
 #title {
+    color: var(--culoare5);
     display: block;
     text-align: center;
     transition: transform 2s;
@@ -15,15 +12,6 @@ body {
 }
 #title > img {
     width: 15%;
-    
-}
-
-h3 {
-    padding: 0.5em;
-    box-shadow: 0px 15px 15px 0 rgba(0, 0, 0, 0.5);
-    margin-bottom: 2em;
-    margin-top: 1em;
-
 }
 
 .poze {
@@ -37,6 +25,7 @@ h3 {
 .poze img {
     width: 30%;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
     transition: transform 1s;
 }
 
@@ -44,97 +33,297 @@ h3 {
     transform: scale(1.1);
 }
 
-.zonele-2-3-4 {
+#containerZone {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-gap: 1em;
-    margin: 2em;
-}
-.zonele-3-4 {
-    display: grid;
-    grid-template-rows: auto auto;
-}
+    grid-template-areas: "zona1 zona1 zona1 zona1"
+                         "zona1 zona1 zona1 zona1"
+                         "zona2 zona2 zona3 zona3"
+                         "zona2 zona2 zona4 zona4"
+                         "zona5 zona6 zona6 zona7"
+                         "zona8 zona8 zona8 zona8";
+    grid-template-columns: 25% 25% 25% 25%;
 
-.zonele-2-3-4 h3 {
-    text-align: center;
 }
 
 
+
+.zona1 {
+    grid-area: zona1;
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.zona2 {
+    grid-area: zona2;
+    margin-bottom: 1em;
+}
+
+.zona3 {
+    grid-area: zona3;
+    margin-bottom: 1em;
+}
+
+.zona4 {
+    grid-area: zona4;
+    margin-bottom: 1em;
+}
+
+.zona5 {
+    grid-area: zona5;
+    margin-bottom: 1em;
+}
+
+.zona6 {
+    grid-area: zona6;
+    margin-bottom: 1em;
+}
+
+.zona7 {
+    grid-area: zona7;
+    margin-bottom: 1em;
+}
+
+.zona8 {
+    grid-area: zona8;
+    display: block;
+    margin-bottom: 1em;
+
+}
+
+.containerProduse {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.produs {
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    border-radius: 10px;
+    margin: 1em;
+    background-color: var(--culoare3);
+    color: var(--culoare5);
+}
 
 .calendar {
+    display: block;
     margin: auto;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
-    border-collapse: collapse;
-}
-.calendar td, th {
-    padding: 1em;
-    border: 1px solid rgba(2, 36, 80, 1);
-}
-
-.listanunt {
-    padding: 0;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
-}
-
-.listanunt li {
-    border: 1px solid rgba(2, 36, 80, 1);
-    padding: 0.5em;
-    list-style: none;
-}
-
-.zonele-5-6-7 {
-    display: grid;
-    grid-template-columns: 30% 38% 30%;
-    grid-gap: 1%;
-    text-align: center;
-}
-
-.zonele-5-6-7 h3 {
-    text-align: center;
-}
-
-.list {
     width: fit-content;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: var(--culoare3);
+    color: var(--culoare5);
+    margin-top: 1em;
 }
 
-.zona-5 li {
-    padding: 0.4em;
-    margin: 0.5em;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+.calendar td {
+    padding: 1em;
+    
 }
 
-.datautil {
-    border-collapse: collapse;
+.listaAnunturi {
+    display: block;
+    margin: auto;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);   
+    list-style: none;
+    width: fit-content;
+    padding: 0;
+    border-radius: 10px;
+    background-color: var(--culoare3);
+    color: var(--culoare5);
+    margin-top: 1em;
+}
+
+.listaAnunturi li {
+    padding: 1em;
+}
+
+.listUtilizatori {
+    margin-top: 1em;
+    display: block;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    margin: auto;
+    border-radius: 10px;
+    background-color: var(--culoare3);
+    color: var(--culoare5);
+}
+
+.listUtilizatori li {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 2em;
+
+}
+
+.dateUtilizator {
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    background-color: var(--culoare3);
+    color: var(--culoare5);
+}
+
+.dateUtilizator td {
+    padding: 1em;
+}
+
+.despreSite {
+    margin-top: 1em;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    background-color: var(--culoare3);
+    color: var(--culoare5);
+}
+
+.despreSite p {
+    padding: 1em;
+    
+}
+
+.columnIframeWindow iframe {
+    margin-top: 1em;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    display: block;
+    border-radius: 10px;
+    background-color: var(--culoare3);
+    color: var(--culoare5);
+    padding: 1em;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    width: auto;
+    text-align: center;
+}
+
+.containerSubPoze {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerAnunturi {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerDreapta {
+    display: flex;
+    flex-direction: column;
+}
+
+.textZona1 p{
+    
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    margin: 1em;
+    border-radius: 10px;
+    padding: 1em;
+    background-color: var(--culoare3);
+    color: var(--culoare5);
+}
+
+.textZona1 {
+    width: 300px;
+}
+
+a {
+    text-decoration: none;
+    margin: auto;
+}
+
+.comeToUsBtn {
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    margin: 1em;
+    background-color: var(--culoare4);
+    color: var(--culoare2);
+    border-radius: 10px;
+    padding: 1em;
+    transition: transform 1s, background-color 1s, color 1s;
+}
+
+.sageata1 {
+    transform: rotate(-30deg);
+}
+
+.sageata2 {
+    transform: rotate(30deg);
+}
+.comeToUsBtn:hover {
+    transform: scale(1.25);
+    background-color: var(--culoare2);
+    color: var(--culoare3);
+}
+
+#detalii p {
+    display: block;
+    background-color: var(--culoare3);
+    color: var(--culoare5);
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+
+}
+
+footer {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    padding: 1em;
+    color: var(--culoare3);
+    text-decoration: none;
+}
+
+footer a {
+    
+    display: block;
+    position: relative;
+    color: var(--culoare3);
+}
+
+
+#restInfo {
+    display: block;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-.datautil td {
-    padding: 1em;
-    border: 1px solid rgba(2, 36, 80, 1);
-    text-align: start;
-}
-.zona-7 p{
-    text-align: start;
-    margin: 1em;
+.listaAnunturi li:nth-of-type(even) {
+    background-color: var(--culoare4);
+    border-radius: 10px;
 }
 
-.loc-prod {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
+.calendar tr:nth-of-type(even) {
+    background-color: var(--culoare4);
+    border-radius: 10px;
 }
 
-.prod {
-    margin: 1em;
-    padding: 1em;
-    height: fit-content;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
-
-}
-
-#detalii p {
-    margin: 2em;
+@media screen and (max-width: 500px) {
+    #containerZone {
+        display: grid;
+        grid-template-areas: "zona1"
+                             "zona2"
+                             "zona3"
+                             "zona4"
+                             "zona5"
+                             "zona6"
+                             "zona7"
+                             "zona8";
+        grid-template-columns: 100%;
+    }
 }

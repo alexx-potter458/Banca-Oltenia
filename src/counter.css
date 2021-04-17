@@ -1,0 +1,8 @@
+body {
+    counter-reset: anunturiCounter;
+}
+
+.listaAnunturi li::before {
+    counter-increment: anunturiCounter;
+    content: counter(anunturiCounter) ". ";
+}

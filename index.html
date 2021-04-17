@@ -1,299 +1,440 @@
-<!DOCTYPE html> <!--am adaugat doctype-->
-<html lang="ro"> <!--am setat limba paginii-->
+<!DOCTYPE html>
+<!--am adaugat doctype-->
+<html lang="ro">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Alexandru Olaru">
-    <meta name="description" content="Acesta este site-ul Bancii Oltenia unde vor fi prrezentate produsele acesteia.">
-    <meta name="keywords" content="banca, bani, cont, Oltenia, transfer, card, serviciu, feedback, oferta, client, valuta, bancar, familie, student">
-    <meta name="viewport" content="width=device-width">
-    <!--am folsit cele 4 meta-uri-->
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Alexandru Olaru">
+  <meta name="description" content="Acesta este site-ul Bancii Oltenia unde vor fi prrezentate produsele acesteia.">
+  <meta name="keywords"
+    content="banca, bani, cont, Oltenia, transfer, card, serviciu, feedback, oferta, client, valuta, bancar, familie, student">
+  <meta name="viewport" content="width=device-width">
+  <!--am folsit cele 4 meta-uri-->
 
-    <title>Banca Oltenia</title>
-    <link rel="title icon" type="image/x-icon" href="./src/icons/title_ico_fav.ico"/>
-    <!--am setat titlul si iconita din tab-->
+  <title>Banca Oltenia</title>
+  <link rel="title icon" type="image/x-icon" href="./src/icons/title_ico_fav.ico" />
+  <!--am setat titlul si iconita din tab-->
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="./src/layout-responsive.css" rel="stylesheet" type="text/css">
+  <link href="./src/stilizare-hr.css" rel="stylesheet" type="text/css">
+  <link href="./src/animatie_banner.css" rel="stylesheet" type="text/css">
+  <link href="./src/link-top.css" rel="stylesheet" type="text/css">
+  <link href="./src/stilizare-taburi.css" rel="stylesheet" type="text/css">
+  <link href="./src/stilizare-tabel.css" rel="stylesheet" type="text/css">
+  <link href="./src/variante-meniu.css" rel="stylesheet" type="text/css">
+  <link href="./src/schema_cromatica.css" rel="stylesheet" type="text/css">
+  <link href="./src/counter.css" rel="stylesheet" type="text/css">
+  <link href="./src/font_extern.css" rel="stylesheet" type="text/css">
+  <link href="./src/icon_animat.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="./src/layout-responsive.css" rel="stylesheet" type="text/css">
-    <link href="./src/schema_cromatica.css" rel="stylesheet" type="text/css">
-    <link href="./src/variante-meniu.css" rel="stylesheet" type="text/css">
-    <link href="./src/stilizare-hr.css" rel="stylesheet" type="text/css">
-    <link href="./src/link-top.css" rel="stylesheet" type="text/css">
-    <link href="./src/stilizare-taburi.css" rel="stylesheet" type="text/css">
-    <link href="./src/animatie_banner.css" rel="stylesheet" type="text/css">
-    <link href="./src/stilizare-tabel.css" rel="stylesheet" type="text/css">
+</head>
 
-  </head>
+<body>
+  <header id="inceput">
 
-  <body class="creativity-1 creativity-5">
-    <!--am impartit body-ul in header, main si footer-->
-      
-    <header id="inceput">
-      <div id="title">
-        <img src="./src/icons/title_ico_512x512.png">
-        <h1> Banca Oltenia </h1>
-      </div>
-      <nav class="creativity-5 creativity-4">
-        <!--am realizat meniul de navigare in pagina-->
-        <ul id="bigList">
-          <li id="listaDeAscuns">
-            <a id="bars"><i class="fa fa-bars brs"></i></a>
-            <ul id="menu">
-                <li class="left hide">
-                  <a id="frameLink" href="./index.html" target="frame"> <i id="icon" class="fa fa-home"></i> <e id="home">Acasa</e></a>
-                  <ul id="submenuacasa" class="creativity-4">
-                    <li><a href="#cursval">Curs valutar</a></li>
-                    <li><a href="#calendar">Calendar</a></li>
-                    <li><a href="#anunturi">Anunturi</a></li>
-                    <li><a href="#utilonline">Utilizatori online</a></li>
-                    <li><a href="#dateutil">Date utilizator</a></li>
-                    <li><a href="#despresite">Despre site</a></li>
-                    <li><a href="#detalii">Despre noi</a></li>
-                    <li class="submenuprod">
-                      <a  href="#produse"> Produse</a>
-                      <ul id="submenuprod" class="creativity-4">
-                        <li><a href="#angajat">Pachet special pentru angajati</a></li>
-                        <li><a href="#student">Pachet special pentru studenti</a></li>
-                        <li><a href="#firma" >Pachet special pentru firme</a></li>
-                      </ul>
-                    </li>
+    <div id="title">
+
+      <img src="./src/icons/title_ico_512x512.png" alt = "pozaTitlu">
+      <h1> Banca Oltenia </h1>
+
+    </div>
+
+    <nav>
+      <!--am realizat meniul de navigare in pagina-->
+
+      <ul id="menu">
+
+        <li id="showBigMenu">
+
+          <a id="bars"><i class="fa fa-bars brs"></i></a>
+          <ul id="barsMenu">
+
+            <li class="showHomeMenu">
+
+              <a href="./index.html"> <i id="iconHomeMenu" class="fa fa-home"></i>
+                <data value="home" id="home">Acasa</data>
+              </a>
+              <ul id="homeMenu">
+                <li><a href="#cursValutar">Curs valutar</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#anunturi">Anunturi</a></li>
+                <li><a href="#utilizatoriOnline">Utilizatori online</a></li>
+                <li><a href="#dateUtilizator">Date utilizator</a></li>
+                <li><a href="#despreSite">Despre site</a></li>
+                <li><a href="#detalii">Despre noi</a></li>
+                <li id="showProdMenu">
+
+                  <a href="#produse"> Produse</a>
+                  <ul id="prodMenu">
+
+                    <li><a href="#angajat">Pachet special pentru angajati</a></li>
+                    <li><a href="#student">Pachet special pentru studenti</a></li>
+                    <li><a href="#firma">Pachet special pentru firme</a></li>
+
                   </ul>
+
                 </li>
-                <li class="right hide">
-                  <div class="navLine"></div>
-                  <a  href="./src/empty.html">Contul meu</a>
-                </li>
-                
-                <li class="right hide">
-                  <div class="navLine"></div>
-                  <a  href="./src/empty.html" target="frame">Asociatia <q>Imparte bucurii</q></a>
-                </li><!--link extern-->
-            </ul>
-          </li>
+
+              </ul>
+            </li>
+            <li class="specialTab">
+              <div class="navLine"></div>
+              <a href="./src/empty.html">Contul meu</a>
+            </li>
+            <li class="specialTab">
+              <div class="navLine"></div>
+              <a href="./src/empty.html" target="_blank">Asociatia <q>Imparte bucurii</q></a>
+            </li>
+            <!--link extern-->
+
+          </ul>
+
+        </li>
+
       </ul>
-      </nav>
-    </header>
 
-    <main>
-      <section><!--am folosit tag-urile section, p, ol, ul si aside-->
-        
-        <div class="poze zona-1"> 
-          <img src="https://static.playtech.ro/wp-content/uploads/2020/08/bani-romania-agricultura-1170x658.jpg" alt="bani"> 
+    </nav>
+  </header>
+
+  <main>
+    <section id="containerZone">
+      <!--am folosit tag-urile section, p, ol, ul si aside-->
+
+      <div class="zona1">
+
+        <div class="poze">
+          <img src="https://static.playtech.ro/wp-content/uploads/2020/08/bani-romania-agricultura-1170x658.jpg" alt="bani">
           <img src="https://expertcontabiltim.ro/wp-content/uploads/2020/04/%C3%8Enfiin%C8%9Bare-Firma-Online-%C3%AEn-Timi%C8%99oara.jpg" alt="firme">
-          <img src="https://thumbs.dreamstime.com/b/female-studnet-learning-home-61470096.jpg" alt="studn">
+          <img src="https://thumbs.dreamstime.com/b/female-studnet-learning-home-61470096.jpg" alt="student">
+        </div>
+
+        <div class="containerSubPoze">
+
+          <div class= "containerAnunturi">
+            <div class="textZona1 text1">
+              <p><strong>IMPORTANT!</strong> Ai nevoie de bani? Noi avem!</p>
+            </div>
+    
+            <div class="textZona1 text1">
+              <p>Vrei sa-ti deschizi un bussiness online? Te putem ajuta!</p>
+            </div>
+    
+            <div class="textZona1 text ">
+              <p>Esti student si nu ai bani de parizer? We got you covered!</p>
+            </div>
+          </div>
+  
+          <div class="piggyBankIcon">
+            <i class="fa fa-piggy-bank"></i>
+          </div>
+
+          <div class="containerDreapta">
+  
+            <div class="textZona1 text ">
+              <p><i class="fa fa-arrow-down sageata1"></i> Stim ca te putem ajuta <i class="fa fa-arrow-down sageata2"></i></p> 
+            </div>
+  
+            
+            <a href="./src/empty.html"> <div class="comeToUsBtn">
+              Vino la noi!
+              </div>
+            </a>
+
+          </div>
+          
+        </div>
+
+      </div>
+
+      <div class="zona2">
+        <h2 id="cursValutar">Curs valutar</h2>
+
+        <div id="containerTabel">
+          <table class="tabelValutar">
+            <tr>
+              <th>Moneda</th>
+              <th>Valoare</th>
+              <th>Disponibilitate</th>
+              
+            </tr>
+            <tr>
+              <td>Euro</td>
+              <td>4.69lei</td>
+              <td>Da</td>
+            </tr>
+            <tr>
+              <td>Dolar</td>
+              <td>4lei</td>
+              <td>Da</td>
+            </tr>
+            <tr>
+              <td>Yen</td>
+              <td>0.3lei</td>
+              <td>Da</td>
+            </tr>
+            <tr>
+              <td>Camila</td>
+              <td>500000lei</td>
+              <td>Nu</td>
+            </tr>
+            <tr>
+              <td>Leva</td>
+              <td>2lei</td>
+              <td>Da</td>
+            </tr>
+            <tr>
+              <td>Franci</td>
+              <td>3lei</td>
+              <td>Nu</td>
+            </tr>
+            <tr>
+              <td>Lire</td>
+              <td>5lei</td>
+              <td>Da</td>
+            </tr>
+          </table>
         </div>
         
-        <div class="zonele-2-3-4">
-          <div class="zona-2">
-            <h3 class="creativity-4 creativity-5" id="cursval">Curs valutar</h3>
-            <table class="creativity-4 valutar">
-              <tr>
-                <th>Moneda</th>
-                <th>Valoare</th>              
-              </tr>
-              <tr>
-                <td>Euro</td>
-                <td>4.69lei</td>
-              </tr>
-              <tr>
-                <td>Dolar</td>
-                <td>4lei</td>
-              </tr>
-              <tr>
-                <td>Yen</td>
-                <td>0.3lei</td>
-              </tr>
-              <tr>
-                <td>Camila</td>
-                <td>500000lei</td>
-              </tr>
-              <tr>
-                <td>Leva</td>
-                <td>2lei</td>
-              </tr>
-              <tr>
-                <td>Franci</td>
-                <td>3lei</td>
-              </tr>
-              <tr>
-                <td>Lire</td>
-                <td>5lei</td>
-              </tr>
-            </table>
 
-            
-          </div>
-          <div class="zonele-3-4">
-            <div class="zona-3">
-              <h3 class="creativity-4 creativity-5" id="calendar">Calendar</h3>
-                <table class="calendar creativity-4">
-                  <tr>
-                    <td>20.03.2021</td>
-                    <td>Am deschis un nou sediu</td>
-                  </tr>
-                  <tr>
-                    <td>24.05.2021</td>
-                    <td>Ne vei gasi si in Valcea, la colt</td>
-                  </tr>
-                  <tr>
-                    <td>22.06.2021</td>
-                    <td>Mergem la mare</td>
-                  </tr>
-                </table>
-            </div>
+      </div>
 
-            <div class="zona-4">
-              <h3 class="creativity-4 creativity-5" id="anunturi">Anunturi</h3>
-              <ul class="creativity-4 listanunt">
-                <li> De maine 20.04.2021, Banca va avea program redus.</li>
-                <li> De acum poti avea imprumut fara dobanda pe perioada de 2 ani.</li>
-                <li> Ana a cumparat toate merele, acum este criza de mere.</li>
-                <li>De azi poti lua voucher concediu cu reducere.</li>
-              </ul>
-            </div>
-          </div>
+      <div class="zona3">
 
+        <h2 id="calendar">Calendar</h2>
+        <table class="calendar">
+
+          <tr>
+            <td>20.03.2021</td>
+            <td>Am deschis un nou sediu</td>
+          </tr>
+          <tr>
+            <td>24.05.2021</td>
+            <td>Ne vei gasi si in Valcea, la colt</td>
+          </tr>
+          <tr>
+            <td>22.06.2021</td>
+            <td>Mergem la mare</td>
+          </tr>
+
+        </table>
+
+      </div>
+
+      <div class="zona4">
+        <h2 id="anunturi">Anunturi</h2>
+        <ul class="listaAnunturi">
+          <li> De maine 20.04.2021, Banca va avea program redus.</li>
+          <li> De acum poti avea imprumut fara dobanda pe perioada de 2 ani.</li>
+          <li> Ana a cumparat toate merele, acum este criza de mere.</li>
+          <li>De azi poti lua voucher concediu cu reducere.</li>
+        </ul>
+      </div>
+
+      <div class="zona5">
+        <h2 id="utilizatoriOnline">Utilizatori online</h2>
+        <ul class="listUtilizatori">
+
+          <li>Andrei Andrei</li>
+          <li>Vasile Ion</li>
+          <li>Gheorghe Micu</li>
+          <li>Mare Micu</li>
+
+        </ul>
+
+      </div>
+
+      <div class="zona6">
+        <h2 id="dateUtilizator">Date utilizator</h2>
+
+        <table class="dateUtilizator">
+
+          <tr>
+            <td>Nume</td>
+            <td>Olaru</td>
+          </tr>
+          <tr>
+            <td>Prenume</td>
+            <td>Alexandru</td>
+          </tr>
+          <tr>
+            <td>Data inregistrare</td>
+            <td>24-05-2018</td>
+          </tr>
+
+        </table>
+
+      </div>
+
+      <div class="zona7">
+        <h2 id="despreSite">Despre site</h2>
+        <div class="despreSite">
+          <p><b>Site:</b> Online</p>
+          <p><b>Server:</b> Running</p>
         </div>
+        
+      </div>
 
-        <div class="zonele-5-6-7">
-          <div class="zona-5">
-            <h3 class="creativity-4 creativity-5" id="utilonline">Utilizatori online</h3>
+      <div class="zona8">
 
-            <ul class="list">
-              <li>Andrei Andrei</li>
-              <li>Vasile Ion</li>
-              <li>Gheorghe Micu</li>
-              <li>Mare Micu</li>
+        <h2 id="produse">Produse</h2>
+        <div class="containerProduse">
+
+          <div class="produs" id="student">
+            <!--am folosit  tagurile i, s, strong-->
+
+            Pachet servicii studenti:<s> 10lei </s> <b>0lei</b>
+            <ul>
+
+              <li>cont bancar</li>
+              <li>bonus lunar de 10lei </li>
+              <li>card transparent</li>
+              <li><b>asigurare de sanatate pe baza cardului</b></li>
+
+            </ul>
+            
+            <details>
+
+              <summary>Cum poti face asta?</summary>
+              <ol>
+
+                <li>Mergi la cel mai apropiat sediu al bancii noastre</li>
+                <li>Ne spui despre planul pe care il vrei</li>
+                <li>De restul ne ocupam noi</li>
+
+              </ol>
+
+            </details>
+
+          </div>
+
+          <div class="produs" id="angajat">
+
+            <div>Pachet servicii angajati:<s> 50lei </s> <strong>0lei</strong></div>
+            <ul>
+
+              <li>cont bancar</li>
+              <li>card credit </li>
+              <li><i>IBAN</i> unic pentru mai multe monede</li>
+              <li><b>0% comision</b> la extragerea din orice bancomat</li>
+
             </ul>
 
           </div>
-          <div class="zona-6">
-            <h3 class="creativity-4 creativity-5" id="dateutil">Date utilizator</h3>
-              <table class="datautil creativity-4">
-                <tr>
-                  <td>Nume</td>
-                  <td>Olaru</td>
-                </tr>
-                <tr>
-                  <td>Prenume</td>
-                  <td>Alexandru</td>
-                </tr>
-                <tr>
-                  <td>Data inregistrare</td>
-                  <td>24-05-2018</td>
-                </tr>
-              </table>
+
+          <div class="produs" id="firma">
+
+            Pachet servicii firme:<s> 300lei </s> <strong>40lei</strong>
+            <ul>
+
+              <li>cont bancar</li>
+              <li>card credit </li>
+              <li>schimb valutar fara comision</li>
+              <li><b>0% comision</b> la primele 10 extrageri</li>
+
+            </ul>
+
+            <details>
+
+              <summary>Cum poti face asta?</summary>
+              <ol>
+
+                <li>Mergi la cel mai apropiat sediu al bancii noastre</li>
+                <li>Ne spui despre planul pe care il vrei</li>
+                <li>De restul ne ocupam noi</li>
+
+              </ol>
+
+            </details>
 
           </div>
-          <div class="zona-7">
-            <h3 class="creativity-4 creativity-5" id="despresite">Despre site</h3>
-            <p><strong>Site:</strong> Online</p>
-            <p><strong>Server:</strong> Running</p>
-          </div>
-        </div>
-        
-        <div class="zona-8">
-          <h3 id="produse" class="creativity-5 creativity-4">Produse</h3>
-            <div class="loc-prod">
-            <div class="prod creativity-4" id="student">
-              <!--am folosit  tagurile i, s, strong-->
-            
-              Pachet servicii studenti:<s> 10lei </s> <strong>0lei</strong>
-             <ul>
-                <li>cont bancar</li>
-                <li>bonus lunar de 10lei </li> 
-                <li>card transparent</li>
-                <li><b>asigurare de sanatate pe baza cardului</b></li>
-              </ul>
-            
-             <p>Un video reprezentativ mai jos:</p>
-              <iframe name="frame" width="480" height="240" src="https://www.youtube.com/embed/xvXbARLoRSU"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            
-              <details>
-                <summary>Cum poti face asta?</summary>
-                <ol>
-                  <li>Mergi la cel mai apropiat sediu al bancii noastre</li>
-                  <li>Ne spui despre planul pe care il vrei</li>
-                  <li>De restul ne ocupam noi</li>
-                </ol>
-              </details>
-            </div>
-        
-            <div class="accent_color prod creativity-4" id="angajat">
-              <div>Pachet servicii angajati:<s> 50lei </s> <strong>0lei</strong></div> 
-              <ul>
-                <li>cont bancar</li>
-                <li>card credit </li> 
-                <li><i>IBAN</i> unic pentru mai multe monede</li>
-                <li><b>0% comision</b> la extragerea din orice bancomat</li>
-              </ul>
-            </div>
-
-            <div class="prod creativity-4" id="firma">
-              Pachet servicii firme:<s> 300lei </s> <strong>40lei</strong>
-             <ul>
-                <li>cont bancar</li>
-                <li>card credit </li> 
-                <li>schimb valutar fara comision</li>
-                <li><b>0% comision</b> la primele 10 extrageri</li>
-              </ul>
-            
-              <p>Un video reprezentativ mai jos:</p>
-              <iframe width="480" height="240" src="https://www.youtube.com/embed/bxXuFl0fkTc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            
-              <details>
-                <summary>Cum poti face asta?</summary>
-               <ol>
-                 <li>Mergi la cel mai apropiat sediu al bancii noastre</li>
-                 <li>Ne spui despre planul pe care il vrei</li>
-                 <li>De restul ne ocupam noi</li>
-               </ol>
-             </details>
-
-            </div>
-            </div>
-            
-            
 
         </div>
-      </section>
-      <hr class="creativity-5">
-      <section  id="detalii"><h3 class="creativity-5 creativity-4">Despre noi</h3>
+
+        <div class='rowIframe'>
+          <div class='columnIframe'>
+              <div class='flexboxItemIframe'>
+                <a href="https://www.youtube.com/embed/jvMSyByi0dU" target="ifr-video">BT Stocks</a>
+              </div>
+                <div class='flexboxItemIframe'>
+                  <a href="https://www.youtube.com/embed/SRNLeXo6o0g" target="ifr-video" >George BCR</a>
+                </div>
+                <div class='flexboxItemIframe'><a href="https://www.youtube.com/embed/zhvTSuT12-4" target="ifr-video" >Roast ING</a>
+              </div>
+            </div>
+            <div class='columnIframe'>
+              <div class='columnIframeWindow'>
+                <iframe name="ifr-video" width="560" height="350" src="https://www.youtube.com/embed/jvMSyByi0dU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+        </div>
+  
+      </div>
+
+    </section>
+
+    <hr>
+
+    <section id="detalii">
+
+      <h2>Despre noi</h2>
+      <p>
+
+        De obicei, site-urile băncilor sunt foarte aglomerate și greu de navigat prin acestea,<br>
+        astfel fiind dificil pentru multe persoane să găsească informația de care au nevoie.<br>
+        Din acest motiv proiectul ”Banca Oltenia” are ca scop prezentarea unei soluții ideale pentru această
+        problemă.<br>
+        Site-ul va fi unul ușor de utilizat pentru orice persoană.<br>
+
+      </p>
+
+      <aside>
+
         <p>
-          De obicei, site-urile băncilor sunt foarte aglomerate și greu de navigat prin acestea,<br> 
-          astfel fiind dificil pentru multe persoane să găsească informația de care au nevoie.<br> 
-          Din acest motiv proiectul ”Banca Oltenia” are ca scop prezentarea unei soluții ideale pentru această problemă.<br> 
-          Site-ul va fi unul ușor de utilizat pentru orice persoană.<br>
+          La banca noasta veti beneficia de anumite servicii bonus daca sunteti din Craiova.
         </p>
 
-        <aside>
-          <p>
-            La banca noasta veti beneficia de anumite servicii bonus daca sunteti din Craiova.
-          </p>
-        </aside>
+      </aside>
 
-      </section>
-      <hr class="creativity-5">
-    </main>
+    </section>
 
-    <footer>
-      <div id="buton">
-        <a class="btn" href="#inceput"><i id="icon" class="fa fa-home"></i></a><!--link catre inceput-->
-      </div>
+    <hr>
 
-      <address>
-        <p>Telefon: 0754544434</p>
-        <p>Email: support@bancaolt.com</p>
-        <p>Adresa: Craiova</p>
-      </address>
+  </main>
 
-     <small>&copy; Copyright <time datetime="2021-03-04">Martie 2021</time> Banca Oltenia</small>
+  <footer>
 
-    </footer>
+    
 
-    <div id="banner">Acesta este un proiect scolar</div>
+      <a href="#inceput" rel="Inceput de pagina">
+      
+        <div id="butonHome" title="Catre inceput">  
+          
+          <div id="cone"></div>
+      
+        </div>
 
-  </body>
+      
+      </a>
+      <!--link catre inceput-->
+
+    
+
+    <address>
+
+      <p><a href="tel:+4075455282">Telefon: 0754544434</a></p>
+      <p><a href="mailto:support@bancaolt.com">Email: support@bancaolt.com</a></p>
+      <p>Adresa: Craiova</p>
+
+    </address>
+
+    <div id="restInfo">
+      <small>&copy; Copyright <time datetime="2021-03-04">Martie 2021</time> Banca Oltenia</small>
+    </div>
+  </footer>
+
+  <div id="banner">Acesta este un proiect scolar</div>
+
+</body>
 
 </html>

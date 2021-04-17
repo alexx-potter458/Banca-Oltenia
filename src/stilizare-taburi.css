@@ -1,12 +1,64 @@
-#frameLink {
-   display: block;
-    padding:  1.3em;
-    text-decoration: none;
-    color: $textColor;
-    transition: background-color 0.5s;
+@import "schema-cromatica.css";
+
+.rowIframe {
+   padding: 1em;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+.columnIframe {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.flexboxItemIframe a {
+   text-decoration: none;
+   width: 100px;
+   height: 50px;
+   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+   display:flex;
+   margin-bottom: 1em;
+   border:1px solid;
+   color: var(--culoare5);
+   background-color: var(--culoare3);
+   border-radius: 5px 0px 0px 5px;
+   justify-content: center;
+   align-items:center;
+   color: var(--culoare5);
+   background-color: var(--culoare3);
+   transition: color .5s, background-color .5s;
+}
+
+.flexboxItemIframe a:hover {
+   color: var(--culoare3);
+   background-color: var(--culoare2);
+}
+
+@media screen and (max-width: 500px) {
+   .columnIframeWindow iframe {
+      width: fit-content;
+      height: auto;
   }
 
-#frameLink:hover {
-   background-color: rgba(1, 21, 38, 1);
+  .columnIframe {
+      flex-direction: row;
+  }
+  .rowIframe {
+      flex-direction: column;
+  }
+  .flexboxItemIframe a {
+   text-decoration: none;
+   width: 100px;
+   height: 50px;
+   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+   display:flex;
+   margin: 0;
+   border:1px solid;
+   border-radius: 5px 5px 0px 0px;
+   justify-content: center;
+   align-items:center;
+}
    
 }

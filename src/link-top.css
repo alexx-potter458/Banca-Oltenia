@@ -1,29 +1,41 @@
+@import "./schema_cromatica.css";
 
-.btn {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    transform: rotate(-45deg);
-    transition: color 1s;
-    
-}
-
-#buton:hover {
-    opacity: 1;
-    background-color: rgba(129, 166, 145, 1);
-}
-
-#buton:hover .btn {
-    color: rgba(1, 21, 38, 1);
-}
-
-#buton {
+#butonHome {
+    border-radius: 10px;
+    display: block;
+    position: fixed;
+    bottom: 5em;
+    right: 2em;
     margin: 2em;
- 
-    width: fit-content;
+    width: 2em;
+    height: 2em;
     border: 1px solid;
-    opacity: 0.3;
     transform: rotate(45deg);
+    opacity: 0.3;
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: var(--culoare3);
     transition: opacity 1s, background-color 1s;
 }
+
+#cone {
+    display: block;
+    position: relative;
+    color: var(--culoare5);
+    width: 0;
+    height: 0;
+    margin-top: 4px;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 20px solid;
+    border-radius: 50%;
+    transform: rotate(135deg);
+    transition: border-top 0.5s;
+  }
+
+  #butonHome:hover {
+    background-color: var(--culoare2);
+    opacity: 1;
+  }
+  #butonHome:hover #cone {
+      border-top: 20px solid var(--culoare3);
+  }

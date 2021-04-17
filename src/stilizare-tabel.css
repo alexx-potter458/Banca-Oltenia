@@ -1,21 +1,49 @@
-.valutar {
+@import "schema-cromatica.css";
+
+.tabelValutar {
     margin: auto;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid;
     border-collapse: collapse;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
 }
-.valutar td, th {
+
+.tabelValutar td, th {
     padding: 1em;
-    border: 1px solid rgba(2, 36, 80, 1);
+    border: 1px solid var(--culoare2);
+    color: var(--culoare5);
 }
 
-.valutar th {
-    background-color: rgba(2, 36, 80, 1);
+.tabelValutar th {
+    background-color: var(--culoare2);
 }
 
-.valutar tr:nth-of-type(even) {
- background-color: rgba(217, 202, 200, 1); ;   
+.tabelValutar tr:nth-of-type(odd) {
+    background-color: var(--culoare4);
+   }
+
+.tabelValutar tr:nth-of-type(even) {
+ background-color: var(--culoare3);
 }
 
-.valutar tr:hover {
-    background-color: rgba(1, 21, 38, 1);
+.tabelValutar tr {
+
+    transition: color .5s, background-color .5s;
+}
+.tabelValutar tr:hover {
+    background-color: var(--culoare2);
+}
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+    #containerTabel {
+        overflow-x: scroll;
+        width: 200px;
+        margin: auto;
+        border-radius: 10px;
+    }
 }

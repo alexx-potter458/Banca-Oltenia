@@ -1,4 +1,8 @@
+@import "schema-cromatica.css";
+
 hr {
-    border-top: 3px dotted;
-    border-bottom: 2px dotted;
+    border-top: 3px dotted var(--culoare5);
+    border-bottom: 2px dotted var(--culoare5);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    margin: 1em;
 }

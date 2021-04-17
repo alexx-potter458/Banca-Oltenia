@@ -1,0 +1,28 @@
+@import "schema-cromatica.css";
+
+.piggyBankIcon  {
+   transform: scale(4.0);
+}
+
+
+.piggyBankIcon i {
+   transform: scale(2.0);
+   color: var(--culoare3);
+   animation: iconAnim 1.5s linear infinite alternate;
+}
+
+@keyframes iconAnim {
+   0% {
+      transform: rotate(-45deg);
+   }
+
+   50% {
+      transform: rotate(0deg);
+   }
+
+
+   100% {
+      transform: rotate(45deg);
+   }
+
+}
