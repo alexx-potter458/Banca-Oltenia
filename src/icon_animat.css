@@ -1,28 +1,33 @@
 @import "schema-cromatica.css";
 
-.piggyBankIcon  {
-   transform: scale(4.0);
+.comeToUsContainer {
+   display: flex;
+   flex-direction: row;
+   width: fit-content;
+   margin: auto;
+   justify-content: space-between;
 }
 
+.comeToUsContainer i {
 
-.piggyBankIcon i {
-   transform: scale(2.0);
+   display: block;
+   margin: auto;
+   animation: iconAnim 5s linear infinite;
    color: var(--culoare3);
-   animation: iconAnim 1.5s linear infinite alternate;
 }
 
 @keyframes iconAnim {
    0% {
-      transform: rotate(-45deg);
+      transform: scale(0.5);
    }
 
    50% {
-      transform: rotate(0deg);
+      transform: scale(1.25);
    }
 
 
    100% {
-      transform: rotate(45deg);
+      transform: scale(0.5);
    }
 
 }

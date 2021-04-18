@@ -221,9 +221,10 @@ h2 {
 .containerDreapta {
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
-.textZona1 p{
+.textZona1 p {
     
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
     width: fit-content;
@@ -232,6 +233,7 @@ h2 {
     padding: 1em;
     background-color: var(--culoare3);
     color: var(--culoare5);
+    
 }
 
 .textZona1 {
@@ -325,5 +327,9 @@ footer a {
                              "zona7"
                              "zona8";
         grid-template-columns: 100%;
+    }
+
+    .containerSubPoze {
+        flex-direction: column;
     }
 }
