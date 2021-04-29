@@ -1,0 +1,35 @@
+{
+  "name": "banca-oltenia",
+  "version": "1.0.0",
+  "description": "Acesta este site-ul Bancii Oltenia unde vor fi prrezentate produsele acesteia.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexx-potter458/Banca-Oltenia.git"
+  },
+  "keywords": [
+    "bani",
+    "banca"
+    "cont",
+    "Oltenia",
+    "transfer",
+    "card",
+    "serviciu", 
+    "feedback" 
+    "oferta", 
+    "client", 
+    "valuta", 
+    "bancar", 
+    "familie", 
+    "student'
+  ],
+  "author": "Alexx Potter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexx-potter458/Banca-Oltenia/issues"
+  },
+  "homepage": "https://github.com/alexx-potter458/Banca-Oltenia#readme"
+}
