@@ -17,13 +17,13 @@
     "Oltenia",
     "transfer",
     "card",
-    "serviciu", 
-    "feedback", 
-    "oferta", 
-    "client", 
-    "valuta", 
-    "bancar", 
-    "familie", 
+    "serviciu",
+    "feedback",
+    "oferta",
+    "client",
+    "valuta",
+    "bancar",
+    "familie",
     "student"
   ],
   "author": "Alexx Potter",
@@ -31,5 +31,10 @@
   "bugs": {
     "url": "https://github.com/alexx-potter458/Banca-Oltenia/issues"
   },
-  "homepage": "https://github.com/alexx-potter458/Banca-Oltenia#readme"
+  "homepage": "https://github.com/alexx-potter458/Banca-Oltenia#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "sharp": "^0.28.1"
+  }
 }
