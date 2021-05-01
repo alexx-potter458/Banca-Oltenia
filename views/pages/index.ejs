@@ -3,99 +3,25 @@
 <html lang="ro">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="author" content="Alexandru Olaru">
-  <meta name="description" content="Acesta este site-ul Bancii Oltenia unde vor fi prrezentate produsele acesteia.">
-  <meta name="keywords"
-    content="banca, bani cont Oltenia transfer card serviciu feedback oferta client valuta bancar familie student">
-  <meta name="viewport" content="width=device-width">
-  <!--am folsit cele 4 meta-uri-->
-
+  
+  <%- include("../fragments/standardHead.ejs") %> 
+  
   <title>Banca Oltenia</title>
-  <link rel="title icon" type="image/x-icon" href="./src/icons/title_ico_fav.ico" />
+  
+  <link rel="title icon" type="image/x-icon" href="/src/images/title_ico_512x512.png" />
   <!--am setat titlul si iconita din tab-->
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="../src/styles/layout-responsive.css" rel="stylesheet" type="text/css">
-  <link href="../src/styles/stilizare-hr.css" rel="stylesheet" type="text/css">
-  <link href="../src/styles/animatie_banner.css" rel="stylesheet" type="text/css">
-  <link href="../src/styles/link-top.css" rel="stylesheet" type="text/css">
-  <link href="../src/styles/stilizare-taburi.css" rel="stylesheet" type="text/css">
-  <link href="../src/styles/stilizare-tabel.css" rel="stylesheet" type="text/css">
-  <link href="../src/styles/variante-meniu.css" rel="stylesheet" type="text/css">
-  <link href="../src/styles/schema_cromatica.css" rel="stylesheet" type="text/css">
-  <link href="../src/styles/counter.css" rel="stylesheet" type="text/css">
-  <link href="../src/styles/font_extern.css" rel="stylesheet" type="text/css">
-  <link href="../src/styles/icon_animat.css" rel="stylesheet" type="text/css">
+  <link href="/src/styles/animatie_banner.css" rel="stylesheet" type="text/css">
+  <link href="/src/styles/link-top.css" rel="stylesheet" type="text/css">
+  <link href="/src/styles/stilizare-taburi.css" rel="stylesheet" type="text/css">
+  <link href="/src/styles/counter.css" rel="stylesheet" type="text/css">
+  <link href="/src/styles/icon_animat.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-  <header id="inceput">
-
-    <div id="title">
-
-      <img src="..src/images/title_ico_512x512.png" alt = "pozaTitlu">
-      <h1> Banca Oltenia </h1>
-
-    </div>
-
-    <nav>
-      <!--am realizat meniul navigare in pagina-->
-
-      <ul id="menu">
-
-        <li id="showBigMenu">
-
-          <a id="bars"><i class="fa fa-bars brs"></i></a>
-          <ul id="barsMenu">
-
-            <li class="showHomeMenu">
-
-              <a href="../views/index.html"> <i id="iconHomeMenu" class="fa fa-home"></i>
-                <data value="home" id="home">Acasa</data>
-              </a>
-              <ul id="homeMenu">
-                <li><a href="#cursValutar">Curs valutar</a></li>
-                <li><a href="#calendar">Calendar</a></li>
-                <li><a href="#anunturi">Anunturi</a></li>
-                <li><a href="#utilizatoriOnline">Utilizatori online</a></li>
-                <li><a href="#dateUtilizator">Date utilizator</a></li>
-                <li><a href="#despreSite">Despre site</a></li>
-                <li><a href="#detalii">Despre noi</a></li>
-                <li id="showProdMenu">
-
-                  <a href="#produse"> Produse</a>
-                  <ul id="prodMenu">
-
-                    <li><a href="#angajat">Pachet special pentru angajati</a></li>
-                    <li><a href="#student">Pachet special pentru studenti</a></li>
-                    <li><a href="#firma">Pachet special pentru firme</a></li>
-
-                  </ul>
-
-                </li>
-
-              </ul>
-            </li>
-            <li class="specialTab">
-              <div class="navLine"></div>
-              <a href="../views/empty.html">Contul meu</a>
-            </li>
-            <li class="specialTab">
-              <div class="navLine"></div>
-              <a href="../views/empty.html" target="_blank">Asociatia <q>Imparte bucurii</q></a>
-            </li>
-            <!--link extern-->
-
-          </ul>
-
-        </li>
-
-      </ul>
-
-    </nav>
-  </header>
+  
+  <%- include("../fragments/header.ejs") %>  <!-- afiseaza rezultatul include-->
 
   <main>
     <section id="containerZone">
@@ -104,49 +30,54 @@
       <div class="zona1">
 
         <div class="poze">
-          <img src="https://static.playtech.ro/wp-content/uploads/2020/08/bani-romania-agricultura-1170x658.jpg" alt="bani">
-          <img src="https://expertcontabiltim.ro/wp-content/uploads/2020/04/%C3%8Enfiin%C8%9Bare-Firma-Online-%C3%AEn-Timi%C8%99oara.jpg" alt="firme">
+          <img src="https://static.playtech.ro/wp-content/uploads/2020/08/bani-romania-agricultura-1170x658.jpg"
+            alt="bani">
+          <img
+            src="https://expertcontabiltim.ro/wp-content/uploads/2020/04/%C3%8Enfiin%C8%9Bare-Firma-Online-%C3%AEn-Timi%C8%99oara.jpg"
+            alt="firme">
           <img src="https://thumbs.dreamstime.com/b/female-studnet-learning-home-61470096.jpg" alt="student">
         </div>
 
         <div class="containerSubPoze">
 
-          <div class= "containerAnunturi">
+          <div class="containerAnunturi">
             <div class="textZona1 text1">
               <p><strong>IMPORTANT!</strong> Ai nevoie de bani? Noi avem!</p>
             </div>
-    
+
             <div class="textZona1 text1">
               <p>Vrei sa-ti deschizi un bussiness online? Te putem ajuta!</p>
             </div>
-    
+
             <div class="textZona1 text">
               <p>Esti student si nu ai bani de parizer? We got you covered!</p>
             </div>
           </div>
 
           <div class="containerDreapta">
-  
+
             <div class="textZona1 text ">
-              <p><i class="fa fa-arrow-down sageata1"></i> Stim ca te putem ajuta <i class="fa fa-arrow-down sageata2"></i></p> 
+              <p><i class="fa fa-arrow-down sageata1"></i> Stim ca te putem ajuta <i
+                  class="fa fa-arrow-down sageata2"></i></p>
             </div>
-  
+
             <div class="comeToUsContainer">
-              
+
               <i class="fa fa-chevron-circle-right"></i>
 
-              <a href="./src/empty.html"> <div class="comeToUsBtn">
-                Vino la noi!
+              <a href="http://localhost:8080/empty">
+                <div class="comeToUsBtn">
+                  Vino la noi!
                 </div>
               </a>
 
               <i class="fa fa-chevron-circle-left"></i>
 
             </div>
-            
+
 
           </div>
-          
+
         </div>
 
       </div>
@@ -160,7 +91,7 @@
               <th>Moneda</th>
               <th>Valoare</th>
               <th>Disponibilitate</th>
-              
+
             </tr>
             <tr>
               <td>Euro</td>
@@ -199,7 +130,7 @@
             </tr>
           </table>
         </div>
-        
+
 
       </div>
 
@@ -276,7 +207,7 @@
           <p><b>Site:</b> Online</p>
           <p><b>Server:</b> Running</p>
         </div>
-        
+
       </div>
 
       <div class="zona8">
@@ -296,7 +227,7 @@
               <li><b>asigurare de sanatate pe baza cardului</b></li>
 
             </ul>
-            
+
             <details>
 
               <summary>Cum poti face asta?</summary>
@@ -357,22 +288,25 @@
 
         <div class='rowIframe'>
           <div class='columnIframe'>
-              <div class='flexboxItemIframe'>
-                <a href="https://www.youtube.com/embed/jvMSyByi0dU" target="ifr-video">BT Stocks</a>
-              </div>
-                <div class='flexboxItemIframe'>
-                  <a href="https://www.youtube.com/embed/SRNLeXo6o0g" target="ifr-video" >George BCR</a>
-                </div>
-                <div class='flexboxItemIframe'><a href="https://www.youtube.com/embed/zhvTSuT12-4" target="ifr-video" >Roast ING</a>
-              </div>
+            <div class='flexboxItemIframe'>
+              <a href="https://www.youtube.com/embed/jvMSyByi0dU" target="ifr-video">BT Stocks</a>
             </div>
-            <div class='columnIframe'>
-              <div class='columnIframeWindow'>
-                <iframe name="ifr-video" width="560" height="350" src="https://www.youtube.com/embed/jvMSyByi0dU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
+            <div class='flexboxItemIframe'>
+              <a href="https://www.youtube.com/embed/SRNLeXo6o0g" target="ifr-video">George BCR</a>
             </div>
+            <div class='flexboxItemIframe'><a href="https://www.youtube.com/embed/zhvTSuT12-4" target="ifr-video">Roast
+                ING</a>
+            </div>
+          </div>
+          <div class='columnIframe'>
+            <div class='columnIframeWindow'>
+              <iframe name="ifr-video" width="560" height="350" src="https://www.youtube.com/embed/jvMSyByi0dU"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
         </div>
-  
+
       </div>
 
     </section>
@@ -406,36 +340,7 @@
 
   </main>
 
-  <footer>
-
-    
-
-      <a href="#inceput" rel="Inceput de pagina">
-      
-        <div id="butonHome" title="Catre inceput">  
-          
-          <div id="cone"></div>
-      
-        </div>
-
-      
-      </a>
-      <!--link catre inceput-->
-
-    
-
-    <address>
-
-      <p><a href="tel:+4075455282">Telefon: 0754544434</a></p>
-      <p><a href="mailto:support@bancaolt.com">Email: support@bancaolt.com</a></p>
-      <p>Adresa: Craiova</p>
-
-    </address>
-
-    <div id="restInfo">
-      <small>&copy; Copyright <time datetime="2021-03-04">Martie 2021</time> Banca Oltenia</small>
-    </div>
-  </footer>
+  <%- include("../fragments/footer.ejs") %>
 
   <div id="banner">Acesta este un proiect scolar</div>
 
