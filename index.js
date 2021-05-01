@@ -3,17 +3,26 @@ const server = createServerExpress(); // server as object
 const path = require("path");
 
 server.set("view engine", "ejs");
-
 server.use("/src", createServerExpress.static(path.join(__dirname, "src")));
 
 server.get("/", function (req, res) {
-
     res.render("pages/index.ejs");
-
 });
 
-server.get("/empty", function(req,res){
-    res.render("empty.ejs");
+server.get("/*", function(req,res){
+    
+    res.render("pages" + req.url + ".ejs", function(err, renderResult) {
+
+        if(err) {
+            if(err.message.includes("Failed to lookup view")) {
+                res.status(404).render("pages/page404.ejs");
+            }
+            else
+                throw err;
+        }
+        else 
+            res.send(renderResult);
+    });
 })
 
 
