@@ -28,12 +28,12 @@
       <div class="zona1">
 
         <div class="poze">
-          <img src="https://static.playtech.ro/wp-content/uploads/2020/08/bani-romania-agricultura-1170x658.jpg"
+          <img src="/src/images/indexImages/bani.jpg"
             alt="bani">
           <img
-            src="https://expertcontabiltim.ro/wp-content/uploads/2020/04/%C3%8Enfiin%C8%9Bare-Firma-Online-%C3%AEn-Timi%C8%99oara.jpg"
+            src="/src/images/indexImages/firma.jpg"
             alt="firme">
-          <img src="https://thumbs.dreamstime.com/b/female-studnet-learning-home-61470096.jpg" alt="student">
+          <img src="/src/images/indexImages/srudenta.jpg" alt="student">
         </div>
 
         <div class="containerSubPoze">
@@ -191,8 +191,8 @@
             <td>Alexandru</td>
           </tr>
           <tr>
-            <td>Data inregistrare</td>
-            <td>24-05-2018</td>
+            <td>Adresa IP</td>
+            <td><%- locals.myIp %> </td>
           </tr>
 
         </table>
@@ -335,6 +335,8 @@
     </section>
 
     <hr>
+
+    <%- include("../fragments/galerieFragment.ejs") %>
 
   </main>
 
