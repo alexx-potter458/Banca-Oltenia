@@ -1,0 +1,80 @@
+
+@page :left {
+    margin-left: 2cm;
+    margin-right: 1cm;
+}
+  
+@page :right {
+    margin-left: 1cm;
+    margin-right: 2cm;
+}
+
+@page {
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+}
+* {
+    color: black !important;
+}  
+nav {
+    page-break-after: always;
+}
+
+footer a {
+    visibility: hidden;
+    page-break-before: always;
+}
+
+img, iframe, picture{
+    visibility: hidden;
+    position: absolute;
+}
+
+#banner {
+    visibility: visible;
+    width: 50%;
+    position: absolute;
+    top: 0em;
+    right: 1em;
+    border: 1px solid black;
+    padding: 0.2em;
+}
+
+#barsMenu {
+    position: relative !important;
+    visibility: visible !important;
+    flex-direction: column !important;
+    opacity: 1 !important;
+    color: black !important;
+}
+
+#homeMenu {
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    box-shadow: none !important;
+    transform: scale(1) !important;
+    color: black !important;
+
+}
+#prodMenu {
+    margin: 0 !important;
+    position: relative !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    transform: scale(1) !important;
+    color: black !important;
+}
+
+
+
+body:before {
+    content: "Olaru Alexandru";
+    position: fixed;
+    z-index: 9999;
+    font-size: 100px;
+    top: 150mm;
+    left: 100mm;
+    opacity: 0.5;
+}

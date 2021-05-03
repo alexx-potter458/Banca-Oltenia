@@ -25,13 +25,13 @@ function pictureCheck() {
         var hour = data.getHours();
 
         if(img.time == "day" && hour >= 12 & hour <= 20)
-            imagesPaths.push({normal:oldImg, small:newImg, description: img.description});
+            imagesPaths.push({normal:oldImg, small:newImg, description: img.description, license:img.license, link:img.licenseLink});
         else
-            if(img.time == "morning" && hour > 5 & hour < 12 )
-                imagesPaths.push({normal:oldImg, small:newImg, description: img.description});
+            if(img.time == "morning" && hour > 5 && hour < 12 )
+            imagesPaths.push({normal:oldImg, small:newImg, description: img.description, license:img.license, link:img.licenseLink});
             else
-                if(img.time == "night" )
-                    imagesPaths.push({normal:oldImg, small:newImg, description: img.description});
+                if(img.time == "night" && ((hour >20 && hour <= 23) || (hour >= 0 && hour <= 5)))
+                imagesPaths.push({normal:oldImg, small:newImg, description: img.description, license:img.license, link:img.licenseLink});
 
         if(!fs.existsSync(newImg)) {
             sharp(oldImg)

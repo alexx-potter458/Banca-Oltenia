@@ -1,6 +1,6 @@
 <head>
     <%- include("../fragments/standardHead.ejs") %>
-    <link rel="stylesheet" href="/src/styles/gallery.css">
+        <link rel="stylesheet" href="/src/styles/gallery.css">
 </head>
 
 <h2>Galerie</h2>
@@ -8,12 +8,17 @@
 <div class="grid">
 
     <% for (let img of locals.images) {%>
-        
-        <picture class = "gridElement">
+
+        <picture class="gridElement">
             <source srcset="<%- img.small%>" media="(max-width:1000px)">
             <img src="<%- img.normal %>" alt="<%- img.description %> ">
+            <figcaption>
+                <%- img.description %> <small>licensed by <a href="<%- img.link%>" ><%- img.license%></a></small>
+            </figcaption>
         </picture>
 
-    <% } %> 
+        <% } %>
 </div>
 
+
+       

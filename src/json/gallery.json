@@ -4,137 +4,191 @@
         {
             "relPath":"dim1.jpg",
             "description":"picture",
-            "time":"morning"
+            "time":"morning",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"dim2.jpg",
             "description":"picture",
-            "time":"morning"
+            "time":"morning",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"dim3.jpg",
             "description":"picture",
-            "time":"morning"
+            "time":"morning",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"dim4.jpg",
             "description":"picture",
-            "time":"morning"
+            "time":"morning",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"dim5.jpg",
             "description":"picture",
-            "time":"morning"
+            "time":"morning",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"dim6.jpg",
             "description":"picture",
-            "time":"morning"
+            "time":"morning",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"dim7.jpg",
             "description":"picture",
-            "time":"morning"
+            "time":"morning",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"dim8.jpg",
             "description":"picture",
-            "time":"morning"
+            "time":"morning",
+            "license":"CC0",
+            "licenseLink":"https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=ccsearch&atype=rich"
         },
         {
             "relPath":"dim9.jpg",
             "description":"picture",
-            "time":"morning"
+            "time":"morning",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"zi1.jpg",
             "description":"picture",
-            "time":"day"
+            "time":"day",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"zi2.jpg",
             "description":"picture",
-            "time":"day"
+            "time":"day",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"zi3.jpg",
             "description":"picture",
-            "time":"day"
+            "time":"day",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"zi4.jpg",
             "description":"picture",
-            "time":"day"
+            "time":"day",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"zi5.jpg",
             "description":"picture",
-            "time":"day"
+            "time":"day",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"zi6.jpg",
             "description":"picture",
-            "time":"day"
+            "time":"day",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"zi7.jpg",
             "description":"picture",
-            "time":"day"
+            "time":"day",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"zi8.jpg",
             "description":"picture",
-            "time":"day"
+            "time":"day",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"zi9.jpg",
             "description":"picture",
-            "time":"day"
+            "time":"day",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"noapte1.jpg",
             "description":"picture",
-            "time":"night"
+            "time":"night",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"noapte2.jpg",
             "description":"picture",
-            "time":"night"
+            "time":"night",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"noapte3.jpg",
             "description":"picture",
-            "time":"night"
+            "time":"night",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"noapte4.jpg",
             "description":"picture",
-            "time":"night"
+            "time":"night",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"noapte5.jpg",
             "description":"picture",
-            "time":"night"
+            "time":"night",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"noapte6.jpg",
             "description":"picture",
-            "time":"night"
+            "time":"night",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"noapte7.jpg",
             "description":"picture",
-            "time":"night"
+            "time":"night",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         },
         {
             "relPath":"noapte8.jpg",
             "description":"picture",
-            "time":"night"
+            "time":"night",
+            "license":"CC0",
+            "licenseLink":"https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=ccsearch&atype=rich"
         },
         {
             "relPath":"noapte9.jpg",
             "description":"picture",
-            "time":"night"
+            "time":"night",
+            "license":"none",
+            "licenseLink":"https://creativecommons.org/licenses/"
         }
     ]
 }
