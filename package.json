@@ -39,6 +39,7 @@
     "express-htaccess-middleware": "^0.1.0",
     "ip": "^1.1.5",
     "ipware": "^2.0.0",
+    "nodemon": "^2.0.7",
     "request-ip": "^2.1.3",
     "sharp": "^0.28.1"
   }
