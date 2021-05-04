@@ -11,7 +11,6 @@ var serverIp = serverNetwork.address();
 server.set("view engine", "ejs");
 server.use("/src", createServerExpress.static(path.join(__dirname, "src")));
 
-
 function pictureCheck() {
 
     var jsonFile = fs.readFileSync("src/json/gallery.json");
@@ -77,16 +76,13 @@ server.get("/galerie", function (req, res) {
 server.get("/*", function(req,res){
     
     res.render("pages" + req.url + ".ejs", {serverIp:serverIp}, function(err, renderResult) {
-
+        console.log(req.url);
         if(err) {
             if(err.message.includes("Failed to lookup view")) {
                 res.status(404).render("pages/page404.ejs");
             }
             else
-                if(err.message.includes("orbidden"))
-                    res.status(403).render();
-                else
-                    throw err;
+                throw err;
         }
         else 
             res.send(renderResult);
