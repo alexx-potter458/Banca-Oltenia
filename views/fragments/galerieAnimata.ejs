@@ -1,0 +1,11 @@
+<div class="galleryContainer">
+    <div class="gridContainer">
+        <% for(let image of locals.images) { if(image.name.lenght < 12)%>
+            
+            <img class="gridPicture" src="<%- image.normal %> " alt="<%- image.description %> ">
+
+            <% } %>
+    </div>
+
+
+</div>

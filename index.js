@@ -3,6 +3,9 @@ const server = createServerExpress(); // server as object
 const path = require("path");
 const fs = require('fs');
 const sharp = require('sharp');
+var serverNetwork = require('ip');
+var serverIp = serverNetwork.address();
+
 
 server.set("view engine", "ejs");
 server.use("/src", createServerExpress.static(path.join(__dirname, "src")));
@@ -25,7 +28,7 @@ function pictureCheck() {
         var hour = data.getHours();
 
         if(img.time == "day" && hour >= 12 & hour <= 20)
-            imagesPaths.push({normal:oldImg, small:newImg, description: img.description, license:img.license, link:img.licenseLink});
+            imagesPaths.push({normal:oldImg, small:newImg, description: img.description, license:img.license, link:img.licenseLink, name:fileName});
         else
             if(img.time == "morning" && hour > 5 && hour < 12 )
             imagesPaths.push({normal:oldImg, small:newImg, description: img.description, license:img.license, link:img.licenseLink});
@@ -50,31 +53,29 @@ function pictureCheck() {
 
 server.get("/", function (req, res) {
 
-    let ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+    let userIp = req.connection.remoteAddress || req.header('x-forwarded-for') ;
     let galleryPaths = pictureCheck();
 
-    res.render("pages/index.ejs", {myIp: String(ip), images:galleryPaths});
+    res.render("pages/index.ejs", {userIp: userIp, images:galleryPaths, serverIp:serverIp});
 });
 
 server.get("/index", function (req, res) {
 
-    let ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+    let userIp = req.connection.remoteAddress || req.header('x-forwarded-for');
     let galleryPaths = pictureCheck();
 
-    res.render("pages/index.ejs", {myIp: String(ip), images:galleryPaths});
+    res.render("pages/index.ejs", {userIp: userIp, images:galleryPaths, serverIp:serverIp});
 });
 
 server.get("/galerie", function (req, res) {
 
     let galleryPaths = pictureCheck();
-    res.render("pages/galerie.ejs", {images:galleryPaths});
+    res.render("pages/galerie.ejs", {images:galleryPaths, serverIp:serverIp});
 });
 
 
 server.get("/*", function(req,res){
     
-    
-
     res.render("pages" + req.url + ".ejs", function(err, renderResult) {
 
         if(err) {
@@ -86,7 +87,7 @@ server.get("/*", function(req,res){
         }
         else 
             res.send(renderResult);
-    });
+    }, {serverIp:serverIp});
 })
 
 

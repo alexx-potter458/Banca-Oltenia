@@ -1,0 +1,163 @@
+.galleryContainer {
+    display: block;
+    height: 240px;
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid transparent;
+    border-radius: 10px;
+    border-image: url("/src/images/galleryImages/dim2.jpg") 30 round;
+
+       
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    animation-name: animGallery;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+.gridPicture {
+    border-radius: 10px;
+}
+
+.gridContainer:hover {
+    animation-play-state: paused;
+}
+
+@keyframes animGallery {
+    0% {
+        top: 0px;
+        left: 0px;
+        transform: scale(1);
+    }
+
+    5.5% {
+        top: -240px;
+        left: -99px;
+        transform: scale(0.33);
+    }
+
+    11% {
+        top: 0px;
+        left: -600px;
+        transform: scale(1);
+    }
+
+    16.5% {
+        top: -240px;
+        left: -99px;
+        transform: scale(0.33);
+    }
+
+    22% {
+        top: -240px;
+        left: -99px;
+        transform: scale(0.33);
+    }
+
+    27.5% {
+        top: 0px;
+        left: -300px;
+        transform: scale(1);
+    }
+
+    33% {
+        top: -240px;
+        left: -99px;
+        transform: scale(0.33);
+    }
+
+    38.5% {
+        top: -240px;
+        left: -300px;
+        transform: scale(1);
+    }
+
+    44% {
+        top: -240px;
+        left: -99px;
+        transform: scale(0.33);
+    }
+
+    49.5% {
+        top: -240px;
+        left: -600px;
+        transform: scale(1);
+    }
+
+    55% {
+        top: -240px;
+        left: -99px;
+        transform: scale(0.33);
+    }
+
+    60.5% {
+        top: -480px;
+        left: -600px;
+        transform: scale(1);
+    }
+
+    66% {
+        top: -240px;
+        left: -99px;
+        transform: scale(0.33);
+    }
+
+    71.5% {
+        top: -240px;
+        left: 0px;
+        transform: scale(1);
+    }
+
+    77% {
+        top: -240px;
+        left: -99px;
+        transform: scale(0.33);
+    }
+
+    82.5% {
+        top: -480px;
+        left: -300px;
+        transform: scale(1);
+    }
+
+    88% {
+        top: -240px;
+        left: -99px;
+        transform: scale(0.33);
+    }
+
+    93.5% {
+        top: -480px;
+        left: 0px;
+        transform: scale(1);
+    }
+
+    99% {
+        top: -240px;
+        left: -99px;
+        transform: scale(0.33);
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        transform: scale(1);
+    }
+
+}
+
+
+
+/* @media screen and (max-width:1000px) {
+    .galleryContainer {
+        visibility: hidden;
+        position: absolute;
+    }
+} */

@@ -19,3 +19,4 @@ https://www.brd.ro/
 https://www.bcr.ro/ro/persoane-fizice
 https://ing.ro/lp/credit-personal?utm_source=google&utm_medium=search&utm_content=text&utm_campaign=PL0917&sup=GOOG&ini=search&cha=17&gclid=Cj0KCQiAhP2BBhDdARIsAJEzXlEF7YhzFh92hQeLWPVUmmThLTthFjBBvxYQU4UA5y_m7PjB2JUahSsaAkJVEALw_wcB
 
+<%- locals.serverIp %>
