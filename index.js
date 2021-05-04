@@ -9,7 +9,13 @@ var requestIp = require('request-ip');
 var serverIp = serverNetwork.address();
 
 server.set("view engine", "ejs");
+
+server.get("/src/json/gallery.json", function(req,res){
+    res.status(403).render("pages/page403.ejs", {serverIp:serverIp});
+})
+
 server.use("/src", createServerExpress.static(path.join(__dirname, "src")));
+server.set('trust proxy', true);
 
 function pictureCheck() {
 
@@ -49,6 +55,7 @@ function pictureCheck() {
     return imagesPaths
 
 }
+
 
 server.get("/", function (req, res) {
 
