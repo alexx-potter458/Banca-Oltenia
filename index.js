@@ -3,9 +3,10 @@ const server = createServerExpress(); // server as object
 const path = require("path");
 const fs = require('fs');
 const sharp = require('sharp');
-var serverNetwork = require('ip');
-var serverIp = serverNetwork.address();
+const serverNetwork = require('ip');
+var requestIp = require('request-ip');
 
+var serverIp = serverNetwork.address();
 
 server.set("view engine", "ejs");
 server.use("/src", createServerExpress.static(path.join(__dirname, "src")));
@@ -49,11 +50,9 @@ function pictureCheck() {
 
 }
 
-
-
 server.get("/", function (req, res) {
 
-    let userIp = req.connection.remoteAddress || req.header('x-forwarded-for') ;
+    var userIp = requestIp.getClientIp(req);
     let galleryPaths = pictureCheck();
 
     res.render("pages/index.ejs", {userIp: userIp, images:galleryPaths, serverIp:serverIp});
@@ -61,7 +60,7 @@ server.get("/", function (req, res) {
 
 server.get("/index", function (req, res) {
 
-    let userIp = req.connection.remoteAddress || req.header('x-forwarded-for');
+    var userIp = requestIp.getClientIp(req);
     let galleryPaths = pictureCheck();
 
     res.render("pages/index.ejs", {userIp: userIp, images:galleryPaths, serverIp:serverIp});
@@ -99,7 +98,6 @@ server.get("/data", function (req, res) {
     res.write("</body></html>");
     res.end();
 });
-
 
 server.listen(8080);
 console.log("Am pornit serverul");
