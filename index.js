@@ -15,7 +15,6 @@ server.get("/src/json/gallery.json", function(req,res){
 })
 
 server.use("/src", createServerExpress.static(path.join(__dirname, "src")));
-server.set('trust proxy', true);
 
 function pictureCheck() {
 
