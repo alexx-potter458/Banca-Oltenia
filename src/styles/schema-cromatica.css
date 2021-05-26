@@ -1,6 +1,6 @@
 * {
-    --culoare1: rgba(1, 21, 38, 1);
-    --culoare2: rgba(2, 36, 80, 1);
+    --culoare1: rgba(2, 36, 80, 1);
+    --culoare2: rgba(1, 21, 38, 1);
     --culoare3: rgba(129, 166, 145, 1);
     --culoare4:rgba(217, 202, 200, 1);
     --culoare5: rgba(250, 250, 250, 1);
@@ -9,4 +9,9 @@
 body {
     background-color: var(--culoare1);
     
+}
+
+.fa-moon {
+    visibility: hidden;
+    position: absolute;
 }

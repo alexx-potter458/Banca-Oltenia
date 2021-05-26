@@ -1,4 +1,3 @@
-@import "schema-cromatica.css";
 
 #title {
     color: var(--culoare5);
@@ -7,9 +6,6 @@
     transition: transform 2s;
 }
 
-#title:hover {
-    transform: scale(1.1);
-}
 #title > img {
     width: 15%;
 }

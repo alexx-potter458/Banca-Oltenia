@@ -82,7 +82,6 @@ server.get("/galerie", function (req, res) {
 server.get("/*", function(req,res){
     
     res.render("pages" + req.url + ".ejs", {serverIp:serverIp}, function(err, renderResult) {
-        console.log(req.url);
         if(err) {
             if(err.message.includes("Failed to lookup view")) {
                 res.status(404).render("pages/page404.ejs");
