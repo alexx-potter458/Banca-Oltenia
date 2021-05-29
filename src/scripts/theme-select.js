@@ -1,11 +1,12 @@
-var  isDark = (JSON.parse(localStorage.getItem("themeStatus"))).darkThemeEnabled;
-if (isDark ==  null) {
+var  isDarkJSON = (JSON.parse(localStorage.getItem("themeStatus")));
+console.log(isDarkJSON);
+if (isDarkJSON ==  null) {
     var themeStatusJSON = JSON.stringify({darkThemeEnabled: 0});
     localStorage.setItem("themeStatus", themeStatusJSON);
 }
 
+var  isDark = (JSON.parse(localStorage.getItem("themeStatus")).darkThemeEnabled);
 document.addEventListener("DOMContentLoaded", run)
-
 function run() {
     let colorScheme = document.getElementById("scheme");
     if(isDark == 1) {

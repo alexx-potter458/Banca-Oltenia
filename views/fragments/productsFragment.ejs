@@ -1,0 +1,53 @@
+
+<div id="products" class="containerProduse">
+    <%for(let product of locals.products) { %>
+        <a class="produs" id="prod_<%- product.id %>" href="/produs/<%- product.id %> ">
+            <div >
+                <!--am folosit  tagurile i, s, strong-->
+
+                <b>
+                    <span class="name"><%- product.name %></span>: <span class="price"><%- product.price %> </span> lei
+                </b>
+
+                <p>
+                    <%- product.description %>
+                </p>
+
+                <p>
+                    Data adaugarii: <time>
+                        <%- product.date_added.getDay() %>/<%- product.date_added.getMonth() %>/<%-
+                                    product.date_added.getFullYear() %>
+                    </time>
+                </p>
+                <p>
+                    Produs in promotie:
+                    <% if(product.special==true) { %>
+                        <%- "Da" %>
+                            <% } else { %>
+                                <%- "Nu" %>
+                                    <% } %>
+                                        <br><small><small><small>Cod produs: <span class="productId">
+                                                        <%- product.id %><span> </small></small>
+                                        </small>
+                </p>
+                <span style="visibility: hidden; position: absolute;" class="mainProp"><%- product.main_category %> </span>
+                <span style="visibility: hidden; position: absolute;" class="props">
+                    <%for(let elem of product.second_categories) { %><%- elem %> <% } %>
+                </span>
+
+                <details>
+                    <summary>Principalele caracteristici</summary>
+                    <ul>
+                        <%for(let i=0; i<3; i++) { %>
+                            <li>
+                                <%- product.properties[i] %>
+                            </li>
+                            <% } %>
+                    </ul>
+                </details>
+
+            </div>
+        </a>
+
+        <% } %>
+</div>

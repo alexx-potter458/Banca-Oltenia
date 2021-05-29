@@ -33,12 +33,12 @@
                             <li><a href="#detalii">Despre noi</a></li>
                             <li id="showProdMenu">
 
-                                <a href="#produse"> Produse</a>
+                                <a href="http://<%- locals.serverIp %>:8080/produse?mainCategory=all"> Produse</a>
                                 <ul id="prodMenu">
 
-                                    <li><a href="#angajat">Pachet special pentru angajati</a></li>
-                                    <li><a href="#student">Pachet special pentru studenti</a></li>
-                                    <li><a href="#firma">Pachet special pentru firme</a></li>
+                                    <li><a href="http://<%- locals.serverIp %>:8080/produse?mainCategory=angajat">Pachet special pentru angajati</a></li>
+                                    <li><a href="http://<%- locals.serverIp %>:8080/produse?mainCategory=student">Pachet special pentru studenti</a></li>
+                                    <li><a href="http://<%- locals.serverIp %>:8080/produse?mainCategory=firma">Pachet special pentru firme</a></li>
 
                                 </ul>
 
@@ -46,8 +46,8 @@
 
                         </ul>
                     </li>
-                    <li class="specialTab">
-                        <div class="navLine"></div>
+                    <li class="specialTab ">
+                        <div class="navLine "></div>
                         <a href="http://<%- locals.serverIp %>:8080/page">Contul meu</a>
                     </li>
                     <li class="specialTab">
@@ -63,6 +63,6 @@
         </ul>
 
     </nav>
-    
-    
+
+
 </header>

@@ -100,6 +100,12 @@
     margin: 1em;
     background-color: var(--culoare3);
     color: var(--culoare5);
+    user-select:none;
+    transition: transform 0.5s;
+}
+
+.produs:hover {
+    transform: scale(1.05);
 }
 
 .calendar {

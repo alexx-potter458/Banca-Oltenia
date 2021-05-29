@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+
+    <%- include("../fragments/standardHead.ejs") %>
+        <title>
+            <%- locals.products[0].name %>
+        </title>
+        <link rel="stylesheet" href="/src/styles/product.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<html>
+
+<body>
+    <% let product=locals.products[0] %>
+        <%- include("../fragments/header.ejs") %>
+            <h2>
+                <%- product.name %>
+            </h2>
+
+            <div class="containerProdus">
+                <div class="produs">
+                    <p style="font-size: 1.2em;">
+                        <%- product.description %>
+                    </p>
+
+                    <p>Caracteritici pachet:</p>
+                    <ul>
+
+                        <%for(let elem of product.properties) { %>
+                            <li>
+                                <%- elem %>
+                            </li>
+                            <% } %>
+                    </ul>
+                </div>
+
+                <img class="prodPic" src="/<%- product.img_path %>" alt="img">
+            </div>
+
+
+
+
+            <%- include("../fragments/footer.ejs") %>
+
+</body>
+
+</html>

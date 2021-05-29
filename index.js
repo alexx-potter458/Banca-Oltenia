@@ -4,14 +4,18 @@ const path = require("path");
 const fs = require('fs');
 const sharp = require('sharp');
 const serverNetwork = require('ip');
+const { Client } = require('pg');
 var requestIp = require('request-ip');
+
+const client = new Client({ host: 'localhost', user: 'postgres', password: 'root', database: 'postgres', port: 5432 });
+client.connect();
 
 var serverIp = serverNetwork.address();
 
 server.set("view engine", "ejs");
 
-server.get("/src/json/gallery.json", function(req,res){
-    res.status(403).render("pages/page403.ejs", {serverIp:serverIp});
+server.get("/src/json/gallery.json", function(req, res) {
+    res.status(403).render("pages/page403.ejs", { serverIp: serverIp });
 })
 
 server.use("/src", createServerExpress.static(path.join(__dirname, "src")));
@@ -28,26 +32,26 @@ function pictureCheck() {
         var oldImg = path.join(galleryPath, img.relPath);
         var ext = path.extname(img.relPath);
         var fileName = path.basename(img.relPath, ext);
-        let newImg = path.join(galleryPath + "/small/" + fileName + "Small" + ".webp");    
-        
+        let newImg = path.join(galleryPath + "/small/" + fileName + "Small" + ".webp");
+
         var data = new Date();
         var hour = data.getHours();
 
-        if(img.time == "day" && hour >= 12 & hour <= 20)
-            imagesPaths.push({normal:oldImg, small:newImg, description: img.description, license:img.license, link:img.licenseLink, name:fileName});
+        if (img.time == "day" && hour >= 12 & hour <= 20)
+            imagesPaths.push({ normal: oldImg, small: newImg, description: img.description, license: img.license, link: img.licenseLink, name: fileName });
         else
-            if(img.time == "morning" && hour > 5 && hour < 12 )
-            imagesPaths.push({normal:oldImg, small:newImg, description: img.description, license:img.license, link:img.licenseLink});
-            else
-                if(img.time == "night" && ((hour >20 && hour <= 23) || (hour >= 0 && hour <= 5)))
-                imagesPaths.push({normal:oldImg, small:newImg, description: img.description, license:img.license, link:img.licenseLink});
+        if (img.time == "morning" && hour > 5 && hour < 12)
+            imagesPaths.push({ normal: oldImg, small: newImg, description: img.description, license: img.license, link: img.licenseLink });
+        else
+        if (img.time == "night" && ((hour > 20 && hour <= 23) || (hour >= 0 && hour <= 5)))
+            imagesPaths.push({ normal: oldImg, small: newImg, description: img.description, license: img.license, link: img.licenseLink });
 
-        if(!fs.existsSync(newImg)) {
+        if (!fs.existsSync(newImg)) {
             sharp(oldImg)
                 .resize(150)
                 .toFile(newImg, function(err) {
                     console.log("can't convert ", oldImg, " to ", newImg, err);
-            });
+                });
         }
     }
 
@@ -55,48 +59,60 @@ function pictureCheck() {
 
 }
 
+server.get("/", function(req, res) {
 
-server.get("/", function (req, res) {
+    var userIp = requestIp.getClientIp(req);
+    let galleryPaths = pictureCheck();
+    const result = client.query("select * from products where special = true", function(err, queryResult) {
+        res.render("pages/index.ejs", { userIp: userIp, images: galleryPaths, serverIp: serverIp, products: queryResult.rows });
+    });
+});
+
+server.get("/index", function(req, res) {
 
     var userIp = requestIp.getClientIp(req);
     let galleryPaths = pictureCheck();
 
-    res.render("pages/index.ejs", {userIp: userIp, images:galleryPaths, serverIp:serverIp});
+    const result = client.query("select * from products where special = true", function(err, queryResult) {
+        res.render("pages/index.ejs", { userIp: userIp, images: galleryPaths, serverIp: serverIp, products: queryResult.rows });
+    });
 });
 
-server.get("/index", function (req, res) {
-
-    var userIp = requestIp.getClientIp(req);
-    let galleryPaths = pictureCheck();
-
-    res.render("pages/index.ejs", {userIp: userIp, images:galleryPaths, serverIp:serverIp});
-});
-
-server.get("/galerie", function (req, res) {
+server.get("/galerie", function(req, res) {
 
     let galleryPaths = pictureCheck();
-    res.render("pages/galerie.ejs", {images:galleryPaths, serverIp:serverIp});
+    res.render("pages/galerie.ejs", { images: galleryPaths, serverIp: serverIp });
 });
 
+server.get("/produse", function(req, res) {
 
-server.get("/*", function(req,res){
-    
-    res.render("pages" + req.url + ".ejs", {serverIp:serverIp}, function(err, renderResult) {
-        if(err) {
-            if(err.message.includes("Failed to lookup view")) {
+    const result = client.query("select * from products", function(err, queryResult) {
+        res.render("pages/produse.ejs", { serverIp: serverIp, products: queryResult.rows, mainCategory: req.query.mainCategory});
+    });
+})
+
+server.get("/produs/:id_prod", function(req, res) {
+    const result = client.query("select * from products where id=" + req.params.id_prod, function(err, queryResult) {
+        res.render("pages/produs.ejs", { serverIp: serverIp, products: queryResult.rows });
+    });
+})
+
+server.get("/*", function(req, res) {
+
+    res.render("pages" + req.url + ".ejs", { serverIp: serverIp }, function(err, renderResult) {
+        if (err) {
+            if (err.message.includes("Failed to lookup view")) {
                 res.status(404).render("pages/page404.ejs");
-            }
-            else
+            } else
                 throw err;
-        }
-        else 
+        } else
             res.send(renderResult);
     });
 })
 
 
 // un exemplu
-server.get("/data", function (req, res) {
+server.get("/data", function(req, res) {
     res.setHeader("Content-type", "text/html");
     console.log("salut3");
     res.write("<!DOCTYPE html><html><body>" + new Date());

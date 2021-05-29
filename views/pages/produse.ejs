@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+
+    <%- include("../fragments/standardHead.ejs") %>
+        <title>Produse</title>
+        <link rel="stylesheet" href="/src/styles/product.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<html>
+
+<body>
+
+    <%- include("../fragments/header.ejs") %>
+        <h2>
+            Produse
+        </h2>
+
+        <div class="containerProduse">
+            <span id="preselectedOption">
+                <%- mainCategory %>
+            </span>
+
+            <div id = "pret">
+                Pret
+                <input type="range" name="pret" id="pretMin" max="500" min="0" value="0">
+                <div style="flex-direction: row;"><span id="valueMin"></span> - <span id="valueMax"></span></div>
+                <input type="range" name="pret" id="pretMax" max="500" min="0" value="500">
+            </div>
+
+            <div id="radio">
+                <input type="radio" id="student" name="mainCategory" value="student">Studenti<br>
+                <input type="radio" id="firma" name="mainCategory" value="firma">Firme<br>
+                <input type="radio" id="angajat" name="mainCategory" value="angajat">Angajati<br>
+                <input type="radio" id="all" name="mainCategory" value="all">Toate
+            </div>
+
+            <div id="checkBoxes">
+
+                <span><input type="checkbox" name="cardInclus" id="cardInclus">Card inclus</span>
+                <span><input type="checkbox" name="nonComision" id="nonComision">Fara comisioane</span>
+                <span><input type="checkbox" name="asigurareSanatate" id="asigurareSanatate"> Asigurare sanatate</span>
+
+
+            </div>
+
+            <div class="buttons">
+                <div class="sortBtn" id="filter">Filtreaza</div>
+                <div class="sortBtn" id="aSort">Sortare ascendenta</div>
+                <div class="sortBtn" id="dSort">Sortare descendenta</div>
+                <div class="sortBtn" id="calcBtn">Calculare</div>
+                <div class="resetBtn" id="reset">Reset</div>
+            </div>
+
+        </div>
+
+        <%- include("../fragments/productsFragment.ejs") %>
+            <%- include("../fragments/footer.ejs") %>
+                <script src="/src/scripts/filters.js"></script>
+</body>
+
+</html>
