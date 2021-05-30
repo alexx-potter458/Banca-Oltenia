@@ -7,7 +7,7 @@ const serverNetwork = require('ip');
 const { Client } = require('pg');
 var requestIp = require('request-ip');
 
-const client = new Client({ host: 'localhost', user: 'postgres', password: 'root', database: 'postgres', port: 5432 });
+const client = new Client({ host: 'localhost', user: 'alex', password: 'alex', database: 'postgres', port: 5432 });
 client.connect();
 
 var serverIp = serverNetwork.address();
