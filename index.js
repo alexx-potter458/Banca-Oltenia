@@ -60,22 +60,22 @@ function pictureCheck() {
 
 }
 
-// server.get("/", function(req, res) {
-
-//     var userIp = requestIp.getClientIp(req);
-//     let galleryPaths = pictureCheck();
-//     const result = client.query("select * from products where special = true", function(err, queryResult) {
-//         res.render("pages/index", { userIp: userIp, images: galleryPaths, serverIp: serverIp, products: queryResult.rows });
-//     });
-// });
-
 server.get("/", function(req, res) {
 
     var userIp = requestIp.getClientIp(req);
     let galleryPaths = pictureCheck();
-    res.render("pages/index", { userIp: userIp, images: galleryPaths, serverIp: serverIp });
-
+    const result = client.query("select * from products where special = true", function(err, queryResult) {
+        res.render("pages/index", { userIp: userIp, images: galleryPaths, serverIp: serverIp, products: queryResult.rows });
+    });
 });
+
+// server.get("/", function(req, res) {
+
+//     var userIp = requestIp.getClientIp(req);
+//     let galleryPaths = pictureCheck();
+//     res.render("pages/index", { userIp: userIp, images: galleryPaths, serverIp: serverIp });
+
+// });
 
 
 server.get("/index", function(req, res) {
