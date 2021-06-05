@@ -1,7 +1,7 @@
 .prodPic {
     width: 300px;
     border-radius: 10px;
-    margin-right: 100px;
+    margin: 16px;
 }
 
 p {
@@ -16,14 +16,16 @@ li {
 
 .produs {
     width: fit-content;
-}
-
-.containerProdus {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
-    
+    justify-content: space-between;
+}
+
+.containerProduss {
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .containerProduse {
@@ -33,6 +35,7 @@ li {
     color: var(--culoare2);
     border-radius: 10px;
     padding: 1em;
+    
 }
 
 .sortBtn {
