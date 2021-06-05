@@ -66,6 +66,7 @@ function pictureCheck() {
 server.get("/", function (req, res) {
 
     var userIp = requestIp.getClientIp(req);
+    console.log(userIp);
     let galleryPaths = pictureCheck();
     const result = client.query("select * from products where special = true", function (err, queryResult) {
         res.render("pages/index", { userIp: userIp, images: galleryPaths, products: queryResult.rows });
