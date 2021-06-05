@@ -10,8 +10,10 @@ var herokuPort = process.env.PORT || 8080
 
 const client = new Client({
     host: 'ec2-54-225-228-142.compute-1.amazonaws.com', user: 'upopbwnaehhuib',
-    password: 'bcc08249637396c43f1b55e63fbe68b8cadfa7e8ce80d7210cb18b45b6ceb37e', database: 'dfa2i2emu7diij', port: 5432, ssl: true
+    password: 'bcc08249637396c43f1b55e63fbe68b8cadfa7e8ce80d7210cb18b45b6ceb37e', database: 'dfa2i2emu7diij', port: 5432, 
+    ssl: {require: true, rejectUnauthorized: false}
 });
+
 client.connect();
 
 var serverIp = serverNetwork.address();
