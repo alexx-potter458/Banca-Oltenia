@@ -4,7 +4,8 @@
   "description": "Acesta este site-ul Bancii Oltenia unde vor fi prrezentate produsele acesteia.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
