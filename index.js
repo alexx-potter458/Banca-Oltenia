@@ -16,8 +16,6 @@ const client = new Client({
 
 client.connect();
 
-var serverIp = serverNetwork.address();
-
 server.set("view engine", "ejs");
 
 server.get("/src/json/gallery.json", function (req, res) {
@@ -70,18 +68,9 @@ server.get("/", function (req, res) {
     var userIp = requestIp.getClientIp(req);
     let galleryPaths = pictureCheck();
     const result = client.query("select * from products where special = true", function (err, queryResult) {
-        res.render("pages/index", { userIp: userIp, images: galleryPaths, serverIp: serverIp, products: queryResult.rows });
+        res.render("pages/index", { userIp: userIp, images: galleryPaths, products: queryResult.rows });
     });
 });
-
-// server.get("/", function(req, res) {
-
-//     var userIp = requestIp.getClientIp(req);
-//     let galleryPaths = pictureCheck();
-//     res.render("pages/index", { userIp: userIp, images: galleryPaths, serverIp: serverIp });
-
-// });
-
 
 server.get("/index", function (req, res) {
 
@@ -89,32 +78,32 @@ server.get("/index", function (req, res) {
     let galleryPaths = pictureCheck();
 
     const result = client.query("select * from products where special = true", function (err, queryResult) {
-        res.render("pages/index.ejs", { userIp: userIp, images: galleryPaths, serverIp: serverIp, products: queryResult.rows });
+        res.render("pages/index.ejs", { userIp: userIp, images: galleryPaths, products: queryResult.rows });
     });
 });
 
 server.get("/galerie", function (req, res) {
 
     let galleryPaths = pictureCheck();
-    res.render("pages/galerie.ejs", { images: galleryPaths, serverIp: serverIp });
+    res.render("pages/galerie.ejs", { images: galleryPaths});
 });
 
 server.get("/produse", function (req, res) {
 
     const result = client.query("select * from products", function (err, queryResult) {
-        res.render("pages/produse.ejs", { serverIp: serverIp, products: queryResult.rows, mainCategory: req.query.mainCategory });
+        res.render("pages/produse.ejs", {products: queryResult.rows, mainCategory: req.query.mainCategory });
     });
 })
 
 server.get("/produs/:id_prod", function (req, res) {
     const result = client.query("select * from products where id=" + req.params.id_prod, function (err, queryResult) {
-        res.render("pages/produs.ejs", { serverIp: serverIp, products: queryResult.rows });
+        res.render("pages/produs.ejs", {products: queryResult.rows });
     });
 })
 
 server.get("/*", function (req, res) {
 
-    res.render("pages" + req.url + ".ejs", { serverIp: serverIp }, function (err, renderResult) {
+    res.render("pages" + req.url + ".ejs", function (err, renderResult) {
         if (err) {
             if (err.message.includes("Failed to lookup view")) {
                 res.status(404).render("pages/page404.ejs");
@@ -124,16 +113,6 @@ server.get("/*", function (req, res) {
             res.send(renderResult);
     });
 })
-
-
-// un exemplu
-server.get("/data", function (req, res) {
-    res.setHeader("Content-type", "text/html");
-    console.log("salut3");
-    res.write("<!DOCTYPE html><html><body>" + new Date());
-    res.write("</body></html>");
-    res.end();
-});
 
 server.listen(herokuPort);
 console.log("Am pornit serverul");
