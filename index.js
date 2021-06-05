@@ -78,7 +78,7 @@ server.get("/", function (req, res) {
 
 server.get("/index", function (req, res) {
 
-    console.log("userr in index");
+    console.log("user in index");
     var userIp = requestIp.getClientIp(req);
     let galleryPaths = pictureCheck();
 
