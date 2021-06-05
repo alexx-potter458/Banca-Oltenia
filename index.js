@@ -6,6 +6,7 @@ const sharp = require('sharp');
 const serverNetwork = require('ip');
 const { Client } = require('pg');
 var requestIp = require('request-ip');
+var herokuPort = process.env.PORT || 8080
 
 const client = new Client({ host: 'localhost', user: 'alex', password: 'alex', database: 'postgres', port: 5432 });
 client.connect();
@@ -120,5 +121,5 @@ server.get("/data", function(req, res) {
     res.end();
 });
 
-server.listen(8080);
+server.listen(herokuPort);
 console.log("Am pornit serverul");
