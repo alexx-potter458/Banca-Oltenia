@@ -78,6 +78,7 @@ server.get("/", function (req, res) {
 
 server.get("/index", function (req, res) {
 
+    console.log("userr in index");
     var userIp = requestIp.getClientIp(req);
     let galleryPaths = pictureCheck();
 
@@ -90,23 +91,27 @@ server.get("/galerie", function (req, res) {
 
     let galleryPaths = pictureCheck();
     res.render("pages/galerie.ejs", { images: galleryPaths});
+    console.log("user in galerie");
 });
 
 server.get("/produse", function (req, res) {
 
     const result = client.query("select * from products", function (err, queryResult) {
         res.render("pages/produse.ejs", {products: queryResult.rows, mainCategory: req.query.mainCategory });
+        console.log("user in produse");
     });
 })
 
 server.get("/produs/:id_prod", function (req, res) {
+    console.log("user in" + req.url);
+
     const result = client.query("select * from products where id=" + req.params.id_prod, function (err, queryResult) {
         res.render("pages/produs.ejs", {products: queryResult.rows });
     });
 })
 
 server.get("/*", function (req, res) {
-
+    console.log("user in " + req.url);
     res.render("pages" + req.url + ".ejs", function (err, renderResult) {
         if (err) {
             if (err.message.includes("Failed to lookup view")) {
