@@ -21,7 +21,7 @@ client.connect();
 server.set("view engine", "ejs");
 
 server.get("/src/json/gallery.json", function (req, res) {
-    res.status(403).render("pages/page403.ejs", { serverIp: serverIp });
+    res.status(403).render("pages/page403.ejs");
 })
 
 server.use("/src", createServerExpress.static(path.join(__dirname, "src")));
