@@ -1,5 +1,5 @@
 var  isDarkJSON = (JSON.parse(localStorage.getItem("themeStatus")));
-console.log(isDarkJSON);
+
 if (isDarkJSON ==  null) {
     var themeStatusJSON = JSON.stringify({darkThemeEnabled: 0});
     localStorage.setItem("themeStatus", themeStatusJSON);

@@ -28,8 +28,7 @@ var preselect = document.getElementById("preselectedOption")
 
 for (let elem of document.getElementById("radio").children) {
     if (elem.tagName == 'INPUT')
-
-        if (elem.value.search(preselect.innerHTML) != -1) {
+        if (preselect.innerHTML.search(elem.value) != -1) {
             elem.checked = true;
             filter();
         }
