@@ -17,7 +17,7 @@ li {
 .produs {
     width: fit-content;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -89,6 +89,7 @@ li {
 #checkBoxes {
     display: flex;
     flex-direction: column;
+    text-align: justify;
 }
 
 #pret {
@@ -110,4 +111,15 @@ li {
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
     background-color: var(--culoare2);
     user-select: none;
+}
+
+.inactive {
+    visibility: hidden;
+    position: absolute;
+}
+.btn {
+    height: fit-content;
+}
+.search {
+    text-align: center;
 }

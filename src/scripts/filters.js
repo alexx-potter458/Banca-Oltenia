@@ -9,19 +9,19 @@ for (var i = 0; i < children.length; i++) {
 var rangeMin = document.getElementById("pretMin");
 var rangeMax = document.getElementById("pretMax");
 
-rangeMin.addEventListener("change", function(){
+rangeMin.addEventListener("change", function () {
     updateMinTextInput(rangeMin.value);
 });
 
-rangeMax.addEventListener("change", function(){
+rangeMax.addEventListener("change", function () {
     updateMaxTextInput(rangeMax.value);
 });
 
 function updateMinTextInput(val) {
-    document.getElementById('valueMin').innerHTML=val; 
-  }
+    document.getElementById('valueMin').innerHTML = val;
+}
 function updateMaxTextInput(val) {
-    document.getElementById('valueMax').innerHTML=val; 
+    document.getElementById('valueMax').innerHTML = val;
 }
 
 var preselect = document.getElementById("preselectedOption")
@@ -40,6 +40,7 @@ var ascendingSort = document.getElementById("aSort").addEventListener('click', f
 var descendingSort = document.getElementById("dSort").addEventListener('click', function () { order(-1) });
 var reset = document.getElementById("reset").addEventListener('click', reset);
 var reset = document.getElementById("calcBtn").addEventListener('click', calculate);
+
 
 function order(value) {
 
@@ -79,10 +80,10 @@ function reset() {
 
     for (let elem of document.getElementById("radio").children) {
         if (elem.tagName == 'INPUT')
-            elem.checked = false;              
+            elem.checked = false;
     }
 
-    for(let elem of document.getElementById("checkBoxes").children)
+    for (let elem of document.getElementById("checkBoxes").children)
         elem.childNodes[0].checked = false;
 
     document.getElementById("all").checked = true;
@@ -100,17 +101,21 @@ function filter() {
 
     let radioFilteredList = []
     for (let elem of basicProdList) {
-        if ((elem.childNodes[1].childNodes[11].innerHTML.search(selectedItem) != -1 || selectedItem == "all") && (1==1))
+        if ((elem.childNodes[1].childNodes[11].innerHTML.search(selectedItem) != -1 || selectedItem == "all") && (1 == 1))
             radioFilteredList.push(elem)
     }
 
-
-    for(let elem of document.getElementById("checkBoxes").children) {
+    for (let elem of document.getElementById("checkBoxes").children) {
         let checkBoxFilteredList = [];
-        if(elem.childNodes[0].checked == true) {
-            let selection = elem.childNodes[0].name;
-            for(let product of radioFilteredList) {
-                if(product.childNodes[1].childNodes[13].innerHTML.search(selection) != -1)
+        if (elem.getElementsByTagName('input')[0].checked == true) {
+            let selection = elem.getElementsByTagName('input')[0].name;
+
+            for (let product of radioFilteredList) {
+                if (elem.getElementsByTagName('input')[2].checked == false && elem.getElementsByTagName('input')[1].checked == false)
+                    elem.getElementsByTagName('input')[2].checked = true;
+
+                if ((product.childNodes[1].childNodes[13].innerHTML.search(selection) != -1 && elem.getElementsByTagName('input')[1].checked == true) ||
+                    (product.childNodes[1].childNodes[13].innerHTML.search(selection) == -1 && elem.getElementsByTagName('input')[2].checked == true))
                     checkBoxFilteredList.push(product);
             }
             radioFilteredList = checkBoxFilteredList;
@@ -121,15 +126,40 @@ function filter() {
     var rangeMax = Number(document.getElementById("pretMax").value);
 
     let rangeFilteredList = [];
-    for(let product of radioFilteredList) {
+    for (let product of radioFilteredList) {
         let prodPrice = Number(product.childNodes[1].childNodes[3].childNodes[3].innerHTML);
 
-        if(prodPrice >= rangeMin && prodPrice <= rangeMax)
+        if (prodPrice >= rangeMin && prodPrice <= rangeMax)
             rangeFilteredList.push(product);
     }
     radioFilteredList = rangeFilteredList;
 
-    
+
+    let search = document.getElementById("search");
+    if(search.value != '') {
+        let searchFilteredList = [];
+        for(let elem of radioFilteredList) {
+            let myWord = search.value.toUpperCase();
+            let words = (elem.childNodes[1].childNodes[3].innerText).toUpperCase().replace(':', '').split(' ');
+
+            let  ok  = false;
+            for(let word of words) {
+                let counter = 0;
+                if(word.length == myWord.length) {
+                    for(let i = 0; i < word.length; i ++) {
+                        if(word.charAt(i) != myWord.charAt(i))
+                            counter++;
+                    }
+                    if(counter <= 2)
+                        searchFilteredList.push(elem);
+                }
+            }
+
+        }
+        radioFilteredList = searchFilteredList;
+    }
+        
+
 
     var parent = document.getElementById("products");
     while (parent.firstChild)
@@ -142,15 +172,16 @@ function filter() {
 function calculate() {
     var sum = 0;
     var parent = document.getElementById("products").children;
-    for(let product of parent) {
+    for (let product of parent) {
         let prodPrice = Number(product.childNodes[1].childNodes[3].childNodes[3].innerHTML);
-        sum +=prodPrice;
+        sum += prodPrice;
     }
 
     var banner = document.createElement("div");
     banner.className = "priceBanner"
-    banner.innerHTML= "Suma este: " + sum + "lei";
-    document.body.appendChild(banner); 
-    setTimeout(function(){
-        document.body.removeChild(document.body.lastChild)}, 2000)
+    banner.innerHTML = "Suma este: " + sum + "lei";
+    document.body.appendChild(banner);
+    setTimeout(function () {
+        document.body.removeChild(document.body.lastChild)
+    }, 2000)
 }

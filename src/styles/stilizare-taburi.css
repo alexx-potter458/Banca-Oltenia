@@ -20,6 +20,7 @@
    display:flex;
    margin-bottom: 1em;
    border:1px solid;
+   border-left: 4px solid;
    color: var(--culoare5);
    background-color: var(--culoare3);
    border-radius: 5px 0px 0px 5px;

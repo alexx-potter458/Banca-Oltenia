@@ -10,7 +10,8 @@
     <% for (let img of locals.images) {%>
 
         <picture class="gridElement">
-            <source srcset="<%- img.small%>" media="(max-width:1000px)">
+            <source srcset="<%- img.medium%>" media="(max-width:1000px) ">
+            <source srcset="<%- img.small%>" media="(max-width:500px)">
             <img src="<%- img.normal %>" alt="<%- img.description %> ">
             <figcaption>
                 <%- img.description %> <small>licensed by <a href="<%- img.link%>" ><%- img.license%></a></small>

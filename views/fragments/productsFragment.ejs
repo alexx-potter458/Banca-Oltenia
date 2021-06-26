@@ -1,5 +1,7 @@
 
 <div id="products" class="containerProduse">
+    <% let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
+    <% let monthsRo = ['Ian', 'Feb', 'Mar', 'Apr', 'Mai', 'Iun', 'Iul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']  %>  
     <%for(let product of locals.products) { %>
         <a class="produs" id="prod_<%- product.id %>" href="/produs/<%- product.id %> ">
             <div >
@@ -14,10 +16,9 @@
                 </p>
 
                 <p>
-                    Data adaugarii: <time>
-                        <%- product.date_added.getDay() %>/<%- product.date_added.getMonth() %>/<%-
-                                    product.date_added.getFullYear() %>
-                    </time>
+                    Data adaugarii: <time>  <span class = "inactive" lang="en-us">  <%- product.date_added.getDay() %>-<%- months[product.date_added.getMonth()] %>-<%- product.date_added.getFullYear() %></span>
+                                            <span class="inactive" lang="ro"> <%- product.date_added.getDay() %>-<%- monthsRo[product.date_added.getMonth()] %>-<%- product.date_added.getFullYear() %> </span>
+                                    </time>
                 </p>
                 <p>
                     Produs in promotie:
@@ -26,8 +27,7 @@
                             <% } else { %>
                                 <%- "Nu" %>
                                     <% } %>
-                                        <br><small><small><small>Cod produs: <span class="productId">
-                                                        <%- product.id %><span> </small></small>
+                                        <br><small><small><small>Cod produs: artc-<span class="productId"><%- product.id %><span></small></small>
                                         </small>
                 </p>
                 <span style="visibility: hidden; position: absolute;" class="mainProp"><%- product.main_category %> </span>
@@ -51,3 +51,14 @@
 
         <% } %>
 </div>
+
+<script>
+    let lang = (document.getElementsByTagName('html'))[0].lang;
+
+    let smallList = document.getElementsByClassName('inactive');
+
+    for(let elem of smallList) {
+        if (elem.lang == lang)
+            elem.className = '';
+    }
+</script>

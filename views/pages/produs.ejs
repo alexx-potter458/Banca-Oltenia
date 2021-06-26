@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-
+<!DOCTYPE html >
+<html lang="ro">
 <head>
 
     <%- include("../fragments/standardHead.ejs") %>
@@ -10,7 +10,7 @@
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<html>
+
 
 <body>
     <% let product=locals.products[0] %>
@@ -21,6 +21,10 @@
 
 
             <div class="produs containerProduss">
+                <div>
+                    <img class="prodPic" src="/<%- product.img_path %>" alt="img">
+                </div>
+
                 <div>
                     <p style="font-size: 1.2em;">
                         <%- product.description %>
@@ -35,9 +39,6 @@
                             </li>
                             <% } %>
                     </ul>
-                </div>
-                <div>
-                    <img class="prodPic" src="/<%- product.img_path %>" alt="img">
                 </div>
 
             </div>

@@ -3,282 +3,281 @@
 <html lang="ro">
 
 <head>
-  
-  <%- include("../fragments/standardHead.ejs") %> 
-  
-  <title>Banca Oltenia</title>
-  
-  <!--am setat titlul si iconita din tab-->
 
-  <link href="/src/styles/animatie-banner.css" rel="stylesheet" type="text/css">
-  <link href="/src/styles/stilizare-taburi.css" rel="stylesheet" type="text/css">
-  <link href="/src/styles/counter.css" rel="stylesheet" type="text/css">
-  <link href="/src/styles/icon-animat.css" rel="stylesheet" type="text/css">
-  <link href="/src/styles/print.css" rel="stylesheet" type="text/css" media="print">
+  <%- include("../fragments/standardHead.ejs") %>
+
+    <title>Banca Oltenia</title>
+
+    <!--am setat titlul si iconita din tab-->
+
+    <link href="/src/styles/animatie-banner.css" rel="stylesheet" type="text/css">
+    <link href="/src/styles/stilizare-taburi.css" rel="stylesheet" type="text/css">
+    <link href="/src/styles/counter.css" rel="stylesheet" type="text/css">
+    <link href="/src/styles/icon-animat.css" rel="stylesheet" type="text/css">
+    <link href="/src/styles/print.css" rel="stylesheet" type="text/css" media="print">
 
 </head>
 
 <body>
-  
-  <%- include("../fragments/header.ejs") %>  <!-- afiseaza rezultatul include-->
+
+  <%- include("../fragments/header.ejs") %>
+    <!-- afiseaza rezultatul include-->
 
 
-  <main>
-    <section id="containerZone">
-      <!--am folosit tag-urile section, p, ol, ul si aside-->
+    <main>
+      <section id="containerZone">
+        <!--am folosit tag-urile section, p, ol, ul si aside-->
 
-      <div class="zona1">
+        <section class="zona1">
 
-        <div class="poze">
-          <img src="/src/images/indexImages/bani.jpg"
-            alt="bani">
-          <img
-            src="/src/images/indexImages/firma.jpg"
-            alt="firme">
-          <img src="/src/images/indexImages/srudenta.jpg" alt="student">
-        </div>
-
-        <div class="containerSubPoze">
-
-          <div class="containerAnunturi">
-            <div class="textZona1 text1">
-              <p><strong>IMPORTANT!</strong> Ai nevoie de bani? Noi avem!</p>
-            </div>
-
-            <div class="textZona1 text1">
-              <p>Vrei sa-ti deschizi un bussiness online? Te putem ajuta!</p>
-            </div>
-
-            <div class="textZona1 text">
-              <p>Esti student si nu ai bani de parizer? We got you covered!</p>
-            </div>
+          <div class="poze">
+            <img src="/src/images/indexImages/bani.jpg" alt="bani">
+            <img src="/src/images/indexImages/firma.jpg" alt="firme">
+            <img src="/src/images/indexImages/srudenta.jpg" alt="student">
           </div>
 
-          <div class="containerDreapta">
+          <div class="containerSubPoze">
 
-            <div class="textZona1 text ">
-              <p><i class="fa fa-arrow-down sageata1"></i> Stim ca te putem ajuta <i
-                  class="fa fa-arrow-down sageata2"></i></p>
+            <div class="containerAnunturi">
+              <div class="textZona1 text1">
+                <p><strong>IMPORTANT!</strong> Ai nevoie de bani? Noi avem!</p>
+              </div>
+
+              <div class="textZona1 text1">
+                <p>Vrei sa-ti deschizi un bussiness online? Te putem ajuta!</p>
+              </div>
+
+              <div class="textZona1 text">
+                <p>Esti student si nu ai bani de parizer? We got you covered!</p>
+              </div>
             </div>
 
-            <div class="comeToUsContainer">
+            <div class="containerDreapta">
 
-              <i class="fa fa-chevron-circle-right"></i>
+              <div class="textZona1 text ">
+                <p><i class="fa fa-arrow-down sageata1"></i> Stim ca te putem ajuta <i
+                    class="fa fa-arrow-down sageata2"></i></p>
+              </div>
 
-              <a href="/page">
-                <div class="comeToUsBtn">
-                  Vino la noi!
-                </div>
-              </a>
+              <div class="comeToUsContainer">
 
-              <i class="fa fa-chevron-circle-left"></i>
+                <i class="fa fa-chevron-circle-right"></i>
+
+                <a href="/page">
+                  <div class="comeToUsBtn">
+                    Vino la noi!
+                  </div>
+                </a>
+
+                <i class="fa fa-chevron-circle-left"></i>
+
+              </div>
+
 
             </div>
-
 
           </div>
 
-        </div>
+        </section>
 
-      </div>
+        <section class="zona2">
+          <h2 id="cursValutar">Curs valutar</h2>
 
-      <div class="zona2">
-        <h2 id="cursValutar">Curs valutar</h2>
+          <div id="containerTabel">
+            <table class="tabelValutar">
+              <tr>
+                <th>Moneda</th>
+                <th>Valoare</th>
+                <th>Disponibilitate</th>
 
-        <div id="containerTabel">
-          <table class="tabelValutar">
-            <tr>
-              <th>Moneda</th>
-              <th>Valoare</th>
-              <th>Disponibilitate</th>
+              </tr>
+              <tr>
+                <td>Euro</td>
+                <td>4.69lei</td>
+                <td>Da</td>
+              </tr>
+              <tr>
+                <td>Dolar</td>
+                <td>4lei</td>
+                <td>Da</td>
+              </tr>
+              <tr>
+                <td>Yen</td>
+                <td>0.3lei</td>
+                <td>Da</td>
+              </tr>
+              <tr>
+                <td>Camila</td>
+                <td>500000lei</td>
+                <td>Nu</td>
+              </tr>
+              <tr>
+                <td>Leva</td>
+                <td>2lei</td>
+                <td>Da</td>
+              </tr>
+              <tr>
+                <td>Franci</td>
+                <td>3lei</td>
+                <td>Nu</td>
+              </tr>
+              <tr>
+                <td>Lire</td>
+                <td>5lei</td>
+                <td>Da</td>
+              </tr>
+            </table>
+          </div>
 
+
+        </section>
+
+        <section class="zona3">
+
+          <h2 id="calendar">Calendar</h2>
+          <table class="calendar">
+
+            <tr>
+              <td>20.03.2021</td>
+              <td>Am deschis un nou sediu</td>
             </tr>
             <tr>
-              <td>Euro</td>
-              <td>4.69lei</td>
-              <td>Da</td>
+              <td>24.05.2021</td>
+              <td>Ne vei gasi si in Valcea, la colt</td>
             </tr>
             <tr>
-              <td>Dolar</td>
-              <td>4lei</td>
-              <td>Da</td>
+              <td>22.06.2021</td>
+              <td>Mergem la mare</td>
             </tr>
-            <tr>
-              <td>Yen</td>
-              <td>0.3lei</td>
-              <td>Da</td>
-            </tr>
-            <tr>
-              <td>Camila</td>
-              <td>500000lei</td>
-              <td>Nu</td>
-            </tr>
-            <tr>
-              <td>Leva</td>
-              <td>2lei</td>
-              <td>Da</td>
-            </tr>
-            <tr>
-              <td>Franci</td>
-              <td>3lei</td>
-              <td>Nu</td>
-            </tr>
-            <tr>
-              <td>Lire</td>
-              <td>5lei</td>
-              <td>Da</td>
-            </tr>
+
           </table>
-        </div>
 
+        </section>
 
-      </div>
+        <section class="zona4">
+          <h2 id="anunturi">Anunturi</h2>
+          <ul class="listaAnunturi">
+            <li> De maine 20.04.2021, Banca va avea program redus.</li>
+            <li> De acum poti avea imprumut fara dobanda pe perioada de 2 ani.</li>
+            <li> Ana a cumparat toate merele, acum este criza de mere.</li>
+            <li>De azi poti lua voucher concediu cu reducere.</li>
+          </ul>
+        </section>
 
-      <div class="zona3">
+        <section class="zona5">
+          <h2 id="utilizatoriOnline">Utilizatori online</h2>
+          <ul class="listUtilizatori">
 
-        <h2 id="calendar">Calendar</h2>
-        <table class="calendar">
+            <li>Andrei Andrei</li>
+            <li>Vasile Ion</li>
+            <li>Gheorghe Micu</li>
+            <li>Mare Micu</li>
 
-          <tr>
-            <td>20.03.2021</td>
-            <td>Am deschis un nou sediu</td>
-          </tr>
-          <tr>
-            <td>24.05.2021</td>
-            <td>Ne vei gasi si in Valcea, la colt</td>
-          </tr>
-          <tr>
-            <td>22.06.2021</td>
-            <td>Mergem la mare</td>
-          </tr>
+          </ul>
 
-        </table>
+        </section>
 
-      </div>
+        <section class="zona6">
+          <h2 id="dateUtilizator">Date utilizator</h2>
 
-      <div class="zona4">
-        <h2 id="anunturi">Anunturi</h2>
-        <ul class="listaAnunturi">
-          <li> De maine 20.04.2021, Banca va avea program redus.</li>
-          <li> De acum poti avea imprumut fara dobanda pe perioada de 2 ani.</li>
-          <li> Ana a cumparat toate merele, acum este criza de mere.</li>
-          <li>De azi poti lua voucher concediu cu reducere.</li>
-        </ul>
-      </div>
+          <table class="dateUtilizator">
 
-      <div class="zona5">
-        <h2 id="utilizatoriOnline">Utilizatori online</h2>
-        <ul class="listUtilizatori">
+            <tr>
+              <td>Nume</td>
+              <td>Olaru</td>
+            </tr>
+            <tr>
+              <td>Prenume</td>
+              <td>Alexandru</td>
+            </tr>
+            <tr>
+              <td>Adresa IP</td>
+              <td>
+                <%- locals.userIp %>
+              </td>
+            </tr>
 
-          <li>Andrei Andrei</li>
-          <li>Vasile Ion</li>
-          <li>Gheorghe Micu</li>
-          <li>Mare Micu</li>
+          </table>
 
-        </ul>
+        </section>
 
-      </div>
-
-      <div class="zona6">
-        <h2 id="dateUtilizator">Date utilizator</h2>
-
-        <table class="dateUtilizator">
-
-          <tr>
-            <td>Nume</td>
-            <td>Olaru</td>
-          </tr>
-          <tr>
-            <td>Prenume</td>
-            <td>Alexandru</td>
-          </tr>
-          <tr>
-            <td>Adresa IP</td>
-            <td><%- locals.userIp %> </td>
-          </tr>
-
-        </table>
-
-      </div>
-
-      <div class="zona7">
-        <h2 id="despreSite">Despre site</h2>
-        <div class="despreSite">
-          <p><b>Site:</b> Online</p>
-          <p><b>Server:</b> Running</p>
-        </div>
-
-      </div>
-
-      <div class="zona8">
-
-        <h2 id="produse">Produse speciale: </h2>
-        <%- include("../fragments/productsFragment.ejs") %>
-
-        <div class='rowIframe'>
-          <div class='columnIframe'>
-            <div class='flexboxItemIframe'>
-              <a href="https://www.youtube.com/embed/jvMSyByi0dU" target="ifr-video">BT Stocks</a>
-            </div>
-            <div class='flexboxItemIframe'>
-              <a href="https://www.youtube.com/embed/SRNLeXo6o0g" target="ifr-video">George BCR</a>
-            </div>
-            <div class='flexboxItemIframe'><a href="https://www.youtube.com/embed/zhvTSuT12-4" target="ifr-video">Roast
-                ING</a>
-            </div>
+        <section class="zona7">
+          <h2 id="despreSite">Despre site</h2>
+          <div class="despreSite">
+            <p><b>Site:</b> Online</p>
+            <p><b>Server:</b> Running</p>
           </div>
-          <div class='columnIframe'>
-            <div class='columnIframeWindow'>
-              <iframe name="ifr-video" width="560" height="350" src="https://www.youtube.com/embed/jvMSyByi0dU"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+
+        </section>
+
+        <section class="zona8">
+
+          <h2 id="produse">Produse speciale: </h2>
+          <%- include("../fragments/productsFragment.ejs") %>
+
+            <div class='rowIframe'>
+              <div class='columnIframe'>
+                <div class='flexboxItemIframe'>
+                  <a href="https://www.youtube.com/embed/jvMSyByi0dU" target="ifr-video">BT Stocks</a>
+                </div>
+                <div class='flexboxItemIframe'>
+                  <a href="https://www.youtube.com/embed/SRNLeXo6o0g" target="ifr-video">George BCR</a>
+                </div>
+                <div class='flexboxItemIframe'><a href="https://www.youtube.com/embed/zhvTSuT12-4"
+                    target="ifr-video">Roast
+                    ING</a>
+                </div>
+              </div>
+              <div class='columnIframe'>
+                <div class='columnIframeWindow'>
+                  <iframe name="ifr-video" width="560" height="350" src="https://www.youtube.com/embed/jvMSyByi0dU"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-      </div>
+        </section>
 
-    </section>
+      </section>
 
-    <hr>
+      <hr>
 
-    <section id="detalii">
+      <section id="detalii">
 
-      <h2>Despre noi</h2>
-      <p>
-
-        De obicei, site-urile băncilor sunt foarte aglomerate și greu de navigat prin acestea,<br>
-        astfel fiind dificil pentru multe persoane să găsească informația de care au nevoie.<br>
-        Din acest motiv proiectul ”Banca Oltenia” are ca scop prezentarea unei soluții ideale pentru această
-        problemă.<br>
-        Site-ul va fi unul ușor de utilizat pentru orice persoană.<br>
-
-      </p>
-
-      <aside>
-
+        <h2>Despre noi</h2>
         <p>
-          La banca noasta veti beneficia de anumite servicii bonus daca sunteti din Craiova.
+
+          De obicei, site-urile băncilor sunt foarte aglomerate și greu de navigat prin acestea,<br>
+          astfel fiind dificil pentru multe persoane să găsească informația de care au nevoie.<br>
+          Din acest motiv proiectul ”Banca Oltenia” are ca scop prezentarea unei soluții ideale pentru această
+          problemă.<br>
+          Site-ul va fi unul ușor de utilizat pentru orice persoană.<br>
+
         </p>
 
-      </aside>
+        <aside>
 
-    </section>
+          <p>
+            La banca noasta veti beneficia de anumite servicii bonus daca sunteti din Craiova.
+          </p>
 
-    <hr>
+        </aside>
 
-    <%- include("../fragments/galerieFragment.ejs") %>
-    <%- include("../fragments/video.ejs") %>
-    <%- include("../fragments/galerieAnimata.ejs") %>
+      </section>
 
-  </main>
+      <hr>
 
-  <%- include("../fragments/footer.ejs") %>
+      <%- include("../fragments/galerieFragment.ejs") %>
+        <%- include("../fragments/video.ejs") %>
+          <%- include("../fragments/galerieAnimata.ejs") %>
 
-  <div id="banner">Acesta este un proiect scolar</div>
+    </main>
 
+    <%- include("../fragments/footer.ejs") %>
 
-  
+      <div id="banner">Acesta este un proiect scolar</div>
+
 </body>
 
 </html>

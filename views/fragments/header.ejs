@@ -35,13 +35,14 @@
 
                                 <a href="/produse?mainCategory=all"> Produse</a>
                                 <ul id="prodMenu">
-
-                                    <li><a href="/produse?mainCategory=angajat">Pachet special pentru angajati</a></li>
-                                    <li><a href="/produse?mainCategory=student">Pachet special pentru studenti</a></li>
-                                    <li><a href="/produse?mainCategory=firma">Pachet special pentru firme</a></li>
+                                    <% for(let elem of locals.mainCategories) { %> 
+                                    <li><a href="/produse?mainCategory=<%- elem.main_category %>">Pachet special pentru <%- elem.main_category %></a></li>
+                                    <% } %> 
 
                                 </ul>
-
+                                <script>
+                                    
+                                </script>
                             </li>
 
                         </ul>
@@ -66,3 +67,4 @@
 
 
 </header>
+

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="ro">
 
 <head>
 
@@ -8,7 +9,7 @@
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<html>
+
 
 <body>
 
@@ -22,6 +23,13 @@
                 <%- mainCategory %>
             </span>
 
+            <div id="radio">
+                <% for(let elem of locals.mainCategories) { %> 
+                <input type="radio" id="firma" name="mainCategory" value="<%- elem.main_category %>"><%- elem.main_category.charAt(0).toUpperCase() + elem.main_category.slice(1) %><br>
+                <% } %> 
+                <input type="radio" id="all" name="mainCategory" value="all">Toate
+            </div>
+            
             <div id = "pret">
                 Pret
                 <input type="range" name="pret" id="pretMin" max="500" min="0" value="0">
@@ -29,29 +37,31 @@
                 <input type="range" name="pret" id="pretMax" max="500" min="0" value="500">
             </div>
 
-            <div id="radio">
-                <input type="radio" id="student" name="mainCategory" value="student">Studenti<br>
-                <input type="radio" id="firma" name="mainCategory" value="firma">Firme<br>
-                <input type="radio" id="angajat" name="mainCategory" value="angajat">Angajati<br>
-                <input type="radio" id="all" name="mainCategory" value="all">Toate
-            </div>
-
             <div id="checkBoxes">
 
-                <span><input type="checkbox" name="cardInclus" id="cardInclus">Card inclus</span>
-                <span><input type="checkbox" name="nonComision" id="nonComision">Fara comisioane</span>
-                <span><input type="checkbox" name="asigurareSanatate" id="asigurareSanatate"> Asigurare sanatate</span>
-
-
+                <% for(let elem of locals.secondCategories) { %> 
+                <span class = "checkboxes"> 
+                    <input type="checkbox" name="<%- elem %>" id="<%- elem %>"><%- elem.charAt(0).toUpperCase() + (elem.replace(/([a-z](?=[A-Z]))/g, '$1 ')).slice(1) %>:
+                    <br>
+                    <input type="radio" name="<%- elem %>" id="<%- elem %>Are" value="are"><span>are</span>
+                    <input type="radio" name="<%- elem %>" id="<%- elem %>NuAre" value="nuAre"><span>nu are</span>
+                </span>
+                <% } %> 
+            </div>
+            <div class = "search">
+                <span>Search:</span><br>
+                <input type="text" name="search" id="search">
             </div>
 
             <div class="buttons">
-                <div class="sortBtn" id="filter">Filtreaza</div>
-                <div class="sortBtn" id="aSort">Sortare ascendenta</div>
-                <div class="sortBtn" id="dSort">Sortare descendenta</div>
-                <div class="sortBtn" id="calcBtn">Calculare</div>
-                <div class="resetBtn" id="reset">Reset</div>
+                <div class="sortBtn btn" id="filter">Filtreaza</div>
+                <div class="sortBtn btn" id="aSort">Sortare ascendenta</div>
+                <div class="sortBtn btn" id="dSort">Sortare descendenta</div>
+                <div class="sortBtn btn" id="calcBtn">Calculare</div>
+                <div class="resetBtn btn" id="reset">Reset</div>
             </div>
+
+           
 
         </div>
 
