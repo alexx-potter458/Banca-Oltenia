@@ -24,13 +24,14 @@
             </span>
 
             <div id="radio">
-                <% for(let elem of locals.mainCategories) { %> 
-                <input type="radio" id="firma" name="mainCategory" value="<%- elem.main_category %>"><%- elem.main_category.charAt(0).toUpperCase() + elem.main_category.slice(1) %><br>
-                <% } %> 
-                <input type="radio" id="all" name="mainCategory" value="all">Toate
+                <% for(let elem of locals.mainCategories) { %>
+                    <input type="radio" id="firma" name="mainCategory" value="<%- elem.main_category %>">
+                    <%- elem.main_category.charAt(0).toUpperCase() + elem.main_category.slice(1) %><br>
+                        <% } %>
+                            <input type="radio" id="all" name="mainCategory" value="all">Toate
             </div>
-            
-            <div id = "pret">
+
+            <div id="pret">
                 Pret
                 <input type="range" name="pret" id="pretMin" max="500" min="0" value="0">
                 <div style="flex-direction: row;"><span id="valueMin"></span> - <span id="valueMax"></span></div>
@@ -39,16 +40,18 @@
 
             <div id="checkBoxes">
 
-                <% for(let elem of locals.secondCategories) { %> 
-                <span class = "checkboxes"> 
-                    <input type="checkbox" name="<%- elem %>" id="<%- elem %>"><%- elem.charAt(0).toUpperCase() + (elem.replace(/([a-z](?=[A-Z]))/g, '$1 ')).slice(1) %>:
-                    <br>
-                    <input type="radio" name="<%- elem %>" id="<%- elem %>Are" value="are"><span>are</span>
-                    <input type="radio" name="<%- elem %>" id="<%- elem %>NuAre" value="nuAre"><span>nu are</span>
-                </span>
-                <% } %> 
+                <% for(let elem of locals.secondCategories) { %>
+                    <span class="checkboxes">
+                        <input type="checkbox" name="<%- elem %>" id="<%- elem %>">
+                        <%- elem.charAt(0).toUpperCase() + (elem.replace(/([a-z](?=[A-Z]))/g, '$1 ' )).slice(1) %>:
+                            <br>
+                            <input type="radio" name="<%- elem %>" id="<%- elem %>Are" value="are"><span>are</span>
+                            <input type="radio" name="<%- elem %>" id="<%- elem %>NuAre" value="nuAre"><span>nu
+                                are</span>
+                    </span>
+                    <% } %>
             </div>
-            <div class = "search">
+            <div class="search">
                 <span>Search:</span><br>
                 <input type="text" name="search" id="search">
             </div>
@@ -61,13 +64,13 @@
                 <div class="resetBtn btn" id="reset">Reset</div>
             </div>
 
-           
+
 
         </div>
 
         <%- include("../fragments/productsFragment.ejs") %>
-            <%- include("../fragments/footer.ejs") %>
-                <script src="/src/scripts/filters.js"></script>
+        <%- include("../fragments/footer.ejs") %>
+        <script src="/src/scripts/filters.js"></script>
 </body>
 
 </html>

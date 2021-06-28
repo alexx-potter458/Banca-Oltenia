@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../fragments/standardHead.ejs") %>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/src/scripts/register.js"></script>
+        <title>Register</title>
+</head>
+
+<body>
+    <%- include("../fragments/header.ejs") %>
+        <div class="subtitle">Creare cont </div>
+        <% if(locals.registerError != "") { %>
+            <div class="subtitle"><span style='color: red;' ><%- locals.registerError %></span></div>
+        <% } %> 
+        <div class="loginContainer">
+            <form class="form" id="form" action="/registerResult" method="post" enctype="multipart/form-data">
+                <div class="fields">
+                    <p>Prenume:</p>
+                    <p>Nume:</p>
+                    <p>Nume de utilizator:</p>
+                    <p>Parola:</p>
+                    <p>Parola(re):</p>
+                    <p>E-mail:</p>
+                    <p>Tema:</p>
+                    <p>Poza:</p>
+                </div>
+                <div class="fields">
+                    <p><input class="field" type="text" name="firstname" id="firstname" pattern="(^[A-Z]{1})+([A-Za-z]{2,50})" title="Prima litera sa fie mare" required></p>
+                    <p><input class="field" type="text" name="lastname" id="lastname" pattern="(^[A-Z]{1})+([A-Za-z]{2,50})" title="Prima litera sa fie mare" required></p>
+                    <p><input class="field" type="text" name="username" id="username" pattern="((^[A-Za-z]{1})+([A-Za-z0-9]{0,5}))+([0-9]{4})$" required title="Username-ul trebuie sa conțină maxim 10 caractere, să inceapă cu o literă și ultimele 4 caractere să fie cifre"></p>
+                    <p><input class="field" type="password" name="password" id="password" pattern="(([A-Za-z]{0,20})+(([A-Z]{1,3})+([A-Za-z]{0,20})))" title="Parola trebuie sa contina minim o litera mare" required></p>
+                    <p><input class="field" type="password" name="password2" id="password2" required></p>
+                    <p><input class="field" type="email" name="email" id="email" required></p>
+                    <p>
+                        <input type="radio" name="theme" id="themeYes" value="dark"><i class="far fa-lightbulb"></i>
+                        <input type="radio" name="theme" id="themeNo" value="light"><i class="fas fa-lightbulb"></i>
+                    </p>
+                    <p> <input type="file" name="profilePic" id="profilePic"></p>
+
+                    <p><input class="registerBtn submit field" type="submit" value="submit"></p>
+                   
+
+                </div>
+            </form>
+        </div>
+
+
+
+        <%- include("../fragments/footer.ejs") %>
+</body>
+
+
+</html>
+

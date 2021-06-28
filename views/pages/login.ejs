@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../fragments/standardHead.ejs") %>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <%- include("../fragments/header.ejs") %>
+    <div class="subtitle">Intra in cont</div>
+
+    <div class= "loginContainer">
+        <form class="form" action="/loginResult" method="post" enctype="multipart/form-data">
+            <div class="fields">
+                <p>Nume de utilizator:</p>
+                <p>Parola:</p>
+            </div>
+            <div class="fields">
+                <p><input class="field" type="text" name="username" id="username"></p>
+                <p><input class="field" type="password" name="password" id="password"></p>
+                <p><input class="registerBtn field submit" type="submit" value="submit"></p>
+                
+            </div>
+        </form>
+        <a class="registerBtn comeToUsBtn" href="/register">Fa-ti cont aici</a>
+    </div>
+
+    
+
+    <%- include("../fragments/footer.ejs") %>
+</body>
+</html>

@@ -123,3 +123,15 @@ li {
 .search {
     text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+        
+    }
+     .buttons div {
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+     }
+}

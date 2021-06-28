@@ -208,6 +208,18 @@ h2 {
     text-align: center;
 }
 
+.subtitle {
+    display: block;
+    border-radius: 10px;
+    background-color: var(--culoare3);
+    color: var(--culoare5);
+    padding: 1em;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    
+    text-align: center;
+}
+
 .containerSubPoze {
     display: flex;
     flex-direction: row;
@@ -315,6 +327,44 @@ footer a {
 .calendar tr:nth-of-type(even) {
     background-color: var(--culoare4);
     border-radius: 10px;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--culoare5);
+    
+}
+.form{
+    display: flex;
+    flex-direction: row;
+}
+
+.fields {
+    display: flex;
+    padding: 8px;
+    text-align: center;
+    flex-direction: column;
+    
+}
+
+.fields p .field {
+    
+    border: none;
+    border-radius: 10px;
+   
+    font-family: inherit;
+    font-size: inherit;
+    height: 100%;
+    margin-bottom: -2px;
+    outline: none;
+    position: relative;
+    width: 100%;
+}
+
+.submit {
+    margin-left: -10em;
 }
 
 @media screen and (max-width: 500px) {
