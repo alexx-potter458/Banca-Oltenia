@@ -1,11 +1,12 @@
 const createServerExpress = require('express');
-const server = createServerExpress(); // server as object
+var server = createServerExpress(); // server as object
 const path = require("path");
 const fs = require('fs');
 var fse = require('fs-extra')
 const nodemailer = require("nodemailer");
 const session = require('express-session');
 const sharp = require('sharp');
+const request = require('request');
 
 const formidable = require('formidable');
 const crypto = require('crypto');
@@ -15,7 +16,7 @@ const { Client } = require('pg');
 let requestIp = require('request-ip');
 let herokuPort = process.env.PORT || 8080;
 
-server.use(session({secret: 'mysecretuser', resave: true, saveUninitialized: false }));
+server.use(session({ secret: 'mysecretuser', resave: true, saveUninitialized: false }));
 
 const client = new Client({
     host: 'ec2-54-225-228-142.compute-1.amazonaws.com', user: 'upopbwnaehhuib',
@@ -97,25 +98,25 @@ function pictureCheck() {
 }
 
 
-async function sendEmail(firstname, lastname, username, email){
-	var transp= nodemailer.createTransport({
-		service: "gmail",
-		secure: false,
-		auth:{//date login 
-			user:"proiect.tehniciweb21@gmail.com",
-			pass:"proiecttw"
-		},
-		tls:{
-			rejectUnauthorized:false
-		}
-	});
-	await transp.sendMail({
-		from:"Banca Oltenia",
-		to:email,
-		subject:"Te-ai inregistrat cu succes",
-		text:"Username-ul tau este "+username,
-		html:"<h1>Buenos dias mi amore <i>" + firstname + " " + lastname +"</i> </h1><p>Username-ul tau este  <b>"+ username +"</b> </p><br>" + "<p>Hai la noi pe site: <a href='https://bancaoltenia-site.herokuapp.com/'>Banca Oltenia</p>"
-	})
+async function sendEmail(firstname, lastname, username, email) {
+    var transp = nodemailer.createTransport({
+        service: "gmail",
+        secure: false,
+        auth: {//date login 
+            user: "proiect.tehniciweb21@gmail.com",
+            pass: "proiecttw"
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+    await transp.sendMail({
+        from: "Banca Oltenia",
+        to: email,
+        subject: "Te-ai inregistrat cu succes",
+        text: "Username-ul tau este " + username,
+        html: "<h1>Buenos dias mi amore <i>" + firstname + " " + lastname + "</i> </h1><p>Username-ul tau este  <b>" + username + "</b> </p><br>" + "<p>Hai la noi pe site: <a href='https://bancaoltenia-site.herokuapp.com/'>Banca Oltenia</p>"
+    })
 
 }
 
@@ -145,7 +146,7 @@ server.post("/registerResult", function (req, res) {
                     res.render("pages/register.ejs", { mainCategories: mainCategories, registerError: '(Userul deja exista. Incearca altceva)' });
                 }
                 else {
-                    
+
                     let encryptedPassword = crypto.scryptSync(fields.password, cryptoSalt, 20).toString('ascii')
                     let now = new Date();
                     let registerDate = (now.getMonth() + '-' + now.getDate() + '-' + now.getFullYear());
@@ -164,12 +165,12 @@ server.post("/registerResult", function (req, res) {
                     }
 
                     let userInsertQuery = `insert into users(username, first_name, last_name, email, register_date, theme, img, role, password) values ('${username}', '${fields.firstname}', '${fields.lastname}', '${fields.email}', '${registerDate}', ${darkThemeEanbled}, '${userPicturePath}', 'basic', '${encryptedPassword}')`;
-                    client.query(userInsertQuery, function (err, result){});
+                    client.query(userInsertQuery, function (err, result) { });
 
                     if (pictureExists == true) {
                         let oldpath = file.profilePic.path;
-                        let userPictureServerPath = path.join(__dirname + "/src/images/users/" + username + '_pic' + path.extname(file.profilePic.name));                
-                        fse.move(oldpath, userPictureServerPath, function(err){})
+                        let userPictureServerPath = path.join(__dirname + "/src/images/users/" + username + '_pic' + path.extname(file.profilePic.name));
+                        fse.move(oldpath, userPictureServerPath, function (err) { })
                     }
                     sendEmail(fields.firstname, fields.lastname, username, fields.email)
                     console.log(encryptedPassword);
@@ -191,24 +192,25 @@ server.post("/loginResult", function (req, res) {
 
     formular.parse(req, function (err, fields) {
         let encryptedPassword = crypto.scryptSync(fields.password, cryptoSalt, 20).toString('ascii');
-        let loginQuery= `select id, username, last_name, first_name, email, theme, register_date, img, role from users where username= $1::text and password=$2::text`;
-        client.query(loginQuery, [fields.username, encryptedPassword], function(err, res){
-            if(!err) {
-                
-                if (res.rows.length == 1){
-                    req.session.user={
-                        id:res.rows[0].id,
-                        username:res.rows[0].username,
-                        firstName:res.rows[0].first_name,
-                        lastName:res.rows[0].last_name,
-                        email:res.rows[0].email,
-                        theme:res.rows[0].theme,
-						role:res.rows[0].role,
+        let loginQuery = `select id, username, last_name, first_name, email, theme, register_date, img, role from users where username= $1::text and password=$2::text`;
+        client.query(loginQuery, [fields.username, encryptedPassword], function (err, res) {
+            if (!err) {
+
+                if (res.rows.length == 1) {
+                    console.log("we here");
+                    req.session.user = {
+                        id: res.rows[0].id,
+                        username: res.rows[0].username,
+                        firstName: res.rows[0].first_name,
+                        lastName: res.rows[0].last_name,
+                        email: res.rows[0].email,
+                        theme: res.rows[0].theme,
+                        role: res.rows[0].role,
                         img: res.rows[0].img
                     }
                 }
             }
-            else{
+            else {
 
             }
         });
@@ -224,26 +226,23 @@ server.get(["/", "/index"], function (req, res) {
     console.log("user in index");
     let userIp = requestIp.getClientIp(req);
 
-    
-
-
     let galleryPaths = pictureCheck();
-console.log(req.session.user);
-    const result = client.query("select * from products where special = true", function (err, queryResult) {
-        res.render("pages/index.ejs", { mainCategories: mainCategories, userIp: userIp, images: galleryPaths, products: queryResult.rows });
+    console.log(req.session);
+    client.query("select * from products where special = true", function (err, queryResult) {
+        res.render("pages/index.ejs", { mainCategories: mainCategories, userIp: userIp, images: galleryPaths, products: queryResult.rows, user: req.session.user });
     });
 });
 
 server.get("/galerie", function (req, res) {
 
     let galleryPaths = pictureCheck();
-    res.render("pages/galerie.ejs", { mainCategories: mainCategories, images: galleryPaths });
+    res.render("pages/galerie.ejs", { mainCategories: mainCategories, images: galleryPaths, user: req.session.user });
     console.log("user in galerie");
 });
 
 server.get("/produse", function (req, res) {
     client.query("select * from products", function (err, queryResult) {
-        res.render("pages/produse.ejs", { mainCategories: mainCategories, secondCategories: secondCategories, products: queryResult.rows, mainCategory: req.query.mainCategory });
+        res.render("pages/produse.ejs", { user: req.session.user, mainCategories: mainCategories, secondCategories: secondCategories, products: queryResult.rows, mainCategory: req.query.mainCategory });
         console.log("user in produse");
     });
 });
@@ -251,14 +250,14 @@ server.get("/produse", function (req, res) {
 server.get("/produs/:id_prod", function (req, res) {
     console.log("user in" + req.url);
 
-    const result = client.query("select * from products where id=" + req.params.id_prod, function (err, queryResult) {
-        res.render("pages/produs.ejs", { mainCategories: mainCategories, products: queryResult.rows });
+    client.query("select * from products where id=" + req.params.id_prod, function (err, queryResult) {
+        res.render("pages/produs.ejs", { mainCategories: mainCategories, products: queryResult.rows, user: req.session.user });
     });
 });
 
 server.get("/*", function (req, res) {
     console.log("user in " + req.url);
-    res.render("pages" + req.url + ".ejs", { mainCategories: mainCategories, registerError: '' }, function (err, renderResult) {
+    res.render("pages" + req.url + ".ejs", { mainCategories: mainCategories, user: req.session.user, registerError: '' }, function (err, renderResult) {
         if (err) {
             if (err.message.includes("Failed to lookup view")) {
                 res.status(404).render("pages/page404.ejs");
