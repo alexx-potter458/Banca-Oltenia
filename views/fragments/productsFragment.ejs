@@ -2,6 +2,7 @@
 <div id="products" class="containerProduse">
     <% let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
     <% let monthsRo = ['Ian', 'Feb', 'Mar', 'Apr', 'Mai', 'Iun', 'Iul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']  %>  
+    <% let days =['luni' , 'marti' , 'miercuri', 'joi', 'vineri', 'sambata', 'duminica'] %> 
     <%for(let product of locals.products) { %>
         <a class="produs" id="prod_<%- product.id %>" href="/produs/<%- product.id %> ">
             <div >
@@ -17,7 +18,7 @@
 
                 <p>
                     Data adaugarii: <time>  <span class = "inactive" lang="en-us">  <%- product.date_added.getDay() %>-<%- months[product.date_added.getMonth()] %>-<%- product.date_added.getFullYear() %></span>
-                                            <span class="inactive" lang="ro"> <%- product.date_added.getDay() %>-<%- monthsRo[product.date_added.getMonth()] %>-<%- product.date_added.getFullYear() %> </span>
+                                            <span class="inactive" lang="ro"> <%- days[product.date_added.getDay()] %> <%- product.date_added.getDay() %>-<%- monthsRo[product.date_added.getMonth()] %>-<%- product.date_added.getFullYear() %> </span>
                                     </time>
                 </p>
                 <p>
