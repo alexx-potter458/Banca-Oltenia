@@ -197,7 +197,7 @@ server.post("/loginResult", function (req, res) {
             if (!err) {
 
                 if (res.rows.length == 1) {
-                    console.log("we here");
+                    console.log("Te ai logat");
                     req.session.user = {
                         id: res.rows[0].id,
                         username: res.rows[0].username,
@@ -216,7 +216,6 @@ server.post("/loginResult", function (req, res) {
         });
 
     })
-    console.log(req.session);
     res.redirect('/index');
 
 });
@@ -227,7 +226,7 @@ server.get(["/", "/index"], function (req, res) {
     let userIp = requestIp.getClientIp(req);
 
     let galleryPaths = pictureCheck();
-    console.log(req.session);
+
     client.query("select * from products where special = true", function (err, queryResult) {
         res.render("pages/index.ejs", { mainCategories: mainCategories, userIp: userIp, images: galleryPaths, products: queryResult.rows, user: req.session.user });
     });
